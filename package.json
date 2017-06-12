@@ -1,0 +1,30 @@
+{
+  "name": "the-big-truck",
+  "version": "1.0.0",
+  "description": "capstone app",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.5",
+    "morgan": "^1.8.2",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "bcrypt": "^1.0.2",
+    "chai": "^4.0.2",
+    "dotenv": "^4.0.0",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "hyperdev"
+  ],
+  "author": "",
+  "license": "ISC"
+}

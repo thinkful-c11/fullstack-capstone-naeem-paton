@@ -7,7 +7,11 @@ const mongoose = require('mongoose');
 // });
 
 const driverSchema = mongoose.Schema({
-    truck: {type: Array, 'default': []},
+    truck: {type: Array, 'default': [{
+        truckNum: {type: String, default: " ", required: true},
+        trailerNum: {type: String, default: " ", required: true},
+        location: {type: String, default: " ", required: true}
+    }]},
     //need to update driver to fleet manager
     driver: {
         firstName: {type: String},
@@ -21,18 +25,17 @@ driverSchema.virtual('driverFullName').get(function() {
     return `${this.driver.firstName} ${this.driver.lastName}`.trim();
 });
 
-driverSchema.virtual('truckInfo').get(function() {
-    return `Uses truck #: ${this.truck[0].truckNum} and trailer #: ${this.truck[0].trailerNum}`.trim();
-});
+// driverSchema.virtual('truckInfo').get(function() {
+//     return `Uses truck #: ${this.truck[0].truckNum} and trailer #: ${this.truck[0].trailerNum}`.trim();
+// });
 
 driverSchema.methods.apiRepr = function() {
     return {
         id: this._id,
         name: this.driverFullName,
-        truckInfo: this.truckInfo,
+        truckInfo: this.truck,
         freight: this.freight,
         phone: this.phoneNum,
-        location: this.location
     };
 };
 

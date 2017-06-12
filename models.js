@@ -22,7 +22,7 @@ driverSchema.virtual('driverFullName').get(function() {
 });
 
 driverSchema.virtual('truckInfo').get(function() {
-    return `Uses truck #: ${this.truck.truckNum} and trailer #: ${this.truck.trailerNum}`.trim();
+    return `Uses truck #: ${this.truck[0].truckNum} and trailer #: ${this.truck[0].trailerNum}`.trim();
 });
 
 driverSchema.methods.apiRepr = function() {

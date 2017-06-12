@@ -3,9 +3,9 @@ const chaiHttp = require('chai-http');
 const faker = require('faker');
 const mongoose = require('mongoose');
 
-const {Driver} = require('./models');
-const {BrokerShipper} = require('./models');
-//const {DATABASE_URL} = require('./config'); 
+const {Driver} = require('../models');
+const {BrokerShipper} = require('../models');
+// const {DATABASE_URL} = require('./config'); 
 
 const {DATABASE_URL} = require('../config'); 
 const {app, runServer, closeServer} = require('../server');
@@ -44,14 +44,13 @@ function seedDriver() {
 function generateBrokerShipper() {
     return {
         companyName: faker.company.companyName(),
-        phone: faker.phone.phoneNumber,
+        phone: faker.random.number(),
         load: {
-            puLocation: faker.lorem.state(),
-            delLocation: faker.lorem.state(),
+            puLocation: faker.address.state(),
+            delLocation: faker.address.state(),
             pudate: faker.date.future(),
             freight: faker.lorem.word()
         },
-        phonNum: faker.phone.phoneNumber()
     };
 }
 
@@ -67,15 +66,14 @@ function seedBrokerShipper() {
 
 describe('Posts', function(){
     before(function(){
-        return runServer(DATABASE_URL);
+        return (runServer(DATABASE_URL), seedDriver(), seedBrokerShipper());
     });
     
     beforeEach(function() {
-        return seedTestData();
     });
     
     afterEach(function() {
-        return dropTestData();
+        // return dropTestData();
     });
 
     after(function() {
@@ -85,15 +83,14 @@ describe('Posts', function(){
     describe('GET', function() {
         it('should list item on GET', function () {
         return chai.request(app)
-            .get('/posts')
+            .get('/drivers')
             .then(function(res) {
                 res.should.have.status(200);
                 res.should.be.json;
                 res.body.should.be.a('array');
-    
                 res.body.length.should.be.at.least(1);
     
-                const expectedKeys = ['id', 'author', 'content', 'title', 'created'];
+                const expectedKeys = ['id', 'name', 'truckInfo', 'freight', 'phone'];
                 res.body.forEach(function(item) {
                     item.should.be.a('object');
                     item.should.include.keys(expectedKeys);
@@ -104,40 +101,71 @@ describe('Posts', function(){
 
     
     describe('POST', function() {
-        it.only('should add an item on POST', function() {
-            const newPost = generateTestData();
+        it('should add an item on POST', function() {
+            const newDriver = {
+                truck: [{
+                    truckNum: faker.lorem.word(),
+                    trailerNum: faker.lorem.word(),
+                    location: faker.address.state(),
+                }],
+                driver: {
+                    firstName: faker.name.firstName(),
+                    lastName: faker.name.lastName()
+                },
+                freight: faker.lorem.word(),
+                phonNum: faker.phone.phoneNumber()
+            };
+
             return chai.request(app)
-                .post('/posts')
-                .send(newPost)
+                .post('/drivers')
+                .send(newDriver)
                 .then(function(res) {
                     res.should.have.status(201);
                     res.body.should.be.a('object');
-                    res.body.should.include.keys('id', 'author', 'content', 'title');
+                    res.body.should.include.keys('driver', 'truck', 'freight', 'phonNum');
                     res.body.id.should.not.be.null;
-                    return   BlogPost.findById(res.body.id).exec();
+                    
+                    return Driver.findById(res.body.id).exec();
                 })
                 .then(function(res){
-                    res.title.should.equal(newPost.title);
-                })
+                    res.driver.firstName.should.equal(newDriver.driver.firstName);
+                    res.driver.lastName.should.equal(newDriver.driver.lastName);
+                    res.truck[0].truckNum.should.equal(newDriver.truck[0].truckNum);
+                    res.truck[0].trailerNum.should.equal(newDriver.truck[0].trailerNum);
+                    res.truck[0].location.should.equal(newDriver.truck[0].location);
+                    res.freight.should.equal(newDriver.freight);
+                    res.driver.phonNum.equal(newDriver.phonNum);
+                });
         });
     });
 
     describe('PUT', function() {
-        it('should update items on PUT', function() {
-        const updateData = generateTestData();
+        it.only('should update items on PUT', function() {
+        const updateDriver = {
+                truck: [{
+                    truckNum: faker.lorem.word(),
+                    trailerNum: faker.lorem.word(),
+                    location: faker.address.state(),
+                }],
+                freight: faker.lorem.word(),
+        };
         return chai.request(app)
-            .get('/posts')
+            .get('/drivers')
             .then(function(res) {
-                updateData.id = res.body[0].id;
+                updateDriver.id = res.body[0]._id;
                 return chai.request(app)
-                    .put(`/posts/${updateData.id}`)
-                    .send(updateData);
+                    .put(`/drivers/${updateDriver.id}`)
+                    .send(updateDriver);
             })
             .then(function(res) {
+                console.log("This is our res body", res.body.truckInfo);
                 res.should.have.status(201);
                 res.should.be.json;
                 res.body.should.be.a('object');
-                res.body.title.should.equal(updateData.title);
+                res.body.truckInfo[0].truckNum.should.equal(updateDriver.truckInfo[0].truckNum);
+                res.body.truckInfo[0].trailerNum.should.equal(updateDriver.truckInfo[0].trailerNum);
+                res.body.truckInfo[0].location.should.equal(updateDriver.truckInfo[0].location);
+                res.body.freight.should.equal(updateDriver.freight);
             });
         });
     });
@@ -145,10 +173,10 @@ describe('Posts', function(){
     describe('DELETE', function() {
         it('should delete items on DELETE', function() { 
             return chai.request(app)
-                .get('/posts')
+                .get('/drivers')
                 .then(function(res) {
                     return chai.request(app)
-                        .delete(`/posts/${res.body[0].id}`);
+                        .delete(`/drivers/${res.body[0].id}`);
                 })
                 .then(function(res) {
                     res.should.have.status(204);

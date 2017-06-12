@@ -1,19 +1,20 @@
 const mongoose = require('mongoose');
 
+// const fleetSchema = new mongoose.Schema({
+//   truckNum: {type: String},
+//   trailerNum: {type: String},
+//   location: {type: String, default: " "}
+// });
+
 const driverSchema = mongoose.Schema({
-    truck: { 
-        truckNum: {type: String},
-        trailerNum: {type: Number},
-        //required: true           //WHY DOES APP BREAK IF I UNCOMMENT LINES 7 AND 12?
-    },
+    truck: {type: Array, 'default': []},
+    //need to update driver to fleet manager
     driver: {
         firstName: {type: String},
         lastName: {type: String},
-        //required: true
     },
     freight: {type: String},
-    phoneNum: {type: Number},
-    location: {type: String, default: " "}
+    phoneNum: {type: Number}
 });
 
 driverSchema.virtual('driverFullName').get(function() {
@@ -34,7 +35,6 @@ driverSchema.methods.apiRepr = function() {
         location: this.location
     };
 };
-
 
 
 

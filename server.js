@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
-// const {Driver, BrokerShipper} = global.models || (global.models = require('./models'));
 const {Driver} = require('./models');
 const {BrokerShipper} = require('./models');
 const {DATABASE_URL, PORT} = require('./config');
@@ -16,8 +15,9 @@ app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 
+
+
 app.get('/drivers', (req, res) => {
-  console.log(req)
     Driver
       .find()
       //.exec()
@@ -67,7 +67,7 @@ app.get('/brokershippers/:id', (req, res) => {
 });
 
 app.post('/drivers', (req, res) => {
-  const requiredFields = ['driver', 'truck', 'freight', 'phoneNum', 'location'];
+  const requiredFields = ['driver', 'truck', 'freight', 'phoneNum'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {

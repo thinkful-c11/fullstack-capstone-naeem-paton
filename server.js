@@ -185,7 +185,7 @@ app.delete('/brokershippers/:id', (req, res) => {
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
-      console.log(`Deleted broker/shipper with id \`${req.params.ID}\``);
+      console.log(`Deleted broker/shipper with id \`${req.params.id}\``);
       res.status(204).end();
     });
 });

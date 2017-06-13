@@ -46,7 +46,6 @@ app.get('/drivers/:id', (req, res) => {
 });
 
 app.get('/brokershippers', (req, res) => {
-  console.log(req)
     BrokerShipper
       .find()
       //.exec()
@@ -156,7 +155,7 @@ app.put('/brokershippers/:id', (req, res) => {
   }
 
   const updated = {};
-  const updateableFields = ['phone', 'load'];
+  const updateableFields = ['phone', 'load', 'companyName'];
   updateableFields.forEach(field => {
     if (field in req.body) {
       updated[field] = req.body[field];

@@ -62,20 +62,20 @@ const brokerShipperSchema = mongoose.Schema({
 brokerShipperSchema.methods.apiRepr = function() {
     return {
         id: this._id,
-        name: this.companyName,
-        load: this.loadInfo,
-        phone: this.phoneMessage || "98990877889",
+        companyName: this.companyName,
+        load: this.load,
+        phone: this.phone || "98990877889",
     };
 };
 
-brokerShipperSchema.virtual('loadInfo').get(function() {
-    return `This ${this.load.freight}load p/u in ${this.load.puLocation}, ` +
-    `${this.load.pudate} and del. to ${this.load.delLocation}`.trim();
-});
+// brokerShipperSchema.virtual('loadInfo').get(function() {
+//     return `This ${this.load.freight}load p/u in ${this.load.puLocation}, ` +
+//     `${this.load.pudate} and del. to ${this.load.delLocation}`.trim();
+// });
 
-brokerShipperSchema.virtual('phoneMessage').get(function() {
-    return `Call us at ${this.phone} to pull this load!`.trim();
-});
+// brokerShipperSchema.virtual('phoneMessage').get(function() {
+//     return `Call us at ${this.phone} to pull this load!`.trim();
+// });
 
 const Driver = mongoose.model('Driver', driverSchema);
 const BrokerShipper = mongoose.model('BrokerShipper', brokerShipperSchema);

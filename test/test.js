@@ -2,6 +2,7 @@
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const chaiMoment = require('chai-moment');
 const faker = require('faker');
 const mongoose = require('mongoose');
 
@@ -12,7 +13,7 @@ const {app, runServer, closeServer} = require('../server');
 
 const should = chai.should();
 chai.use(chaiHttp);
-
+chai.use(chaiMoment);
 
 function generateDriver() {
   return {
@@ -48,7 +49,7 @@ function generateBrokerShipper() {
     load: {
       puLocation: faker.address.state(),
       delLocation: faker.address.state(),
-      pudate: '2018-02-22T14:12:54.995Z',
+      pudate: faker.date.future(),
       freight: faker.lorem.word()
     },
   };
@@ -199,7 +200,7 @@ describe('Posts', function(){
     });
   });
 
-  describe.only('Broker/Shipper Test', function (){
+  describe('Broker/Shipper Test', function (){
     describe('GET', function() {
       it('This should get the broker/shipper information', function () {
 
@@ -254,6 +255,7 @@ describe('Posts', function(){
                 .post('/brokershippers')
                 .send(newBroker)
                 .then(function(res) {
+                  console.log("LOOK ----->", newBroker)
                   res.body.should.be.a('object');
                   res.body.should.include.keys('id', 'companyName', 'load', 'phone');
                   res.body.id.should.not.be.null;
@@ -261,10 +263,11 @@ describe('Posts', function(){
                   return BrokerShipper.findById(res.body.id).exec();
                 })
                 .then(function(res){
+                  console.log("HEEY=====>", res)
                   res.companyName.should.equal(newBroker.companyName);
                   res.load.puLocation.should.equal(newBroker.load.puLocation);
                   res.load.delLocation.should.equal(newBroker.load.delLocation);
-                  res.load.pudate.should.equal(newBroker.load.pudate);
+                  res.load.pudate.should.be.sameMoment(newBroker.load.pudate);
                   res.load.freight.should.equal(newBroker.load.freight);
                   res.phone.should.equal(newBroker.phone);
                 });

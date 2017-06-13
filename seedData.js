@@ -1,8 +1,6 @@
 const faker = require('faker');
-const mongoose = require('mongoose');
-const {Driver} = require('./models');
-const {BrokerShipper} = require('./models');
-const {DATABASE_URL} = require('./config'); 
+const {Driver, BrokerShipper} = require('./models');
+const {DATABASE_URL} = require('./config');
 
 function generateDriver() {
     return {
@@ -11,7 +9,6 @@ function generateDriver() {
             trailerNum: faker.lorem.word(),
             location: faker.address.state(),
         }],
-        //faker.company.companyName()
         driver: {
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName()
@@ -28,7 +25,7 @@ function seedDriver() {
     for (let i = 0; i < 10; i++) {
         seedData.push(generateDriver());
     }
-    return Driver.insertMany(seedData);
+    return drivers.insertMany(seedData);
 }
 
 function generateBrokerShipper() {
@@ -52,8 +49,8 @@ function seedBrokerShipper() {
     for (let i = 0; i < 20; i++) {
         seedData.push(generateBrokerShipper());
     }
-    return BrokerShipper.insertMany(seedData);
+    return brokershippers.insertMany(seedData);
 }
 
-seedDriver();
-seedBrokerShipper();
+
+module.exports = {generateBrokerShipper, generateDriver, seedBrokerShipper, seedDriver};

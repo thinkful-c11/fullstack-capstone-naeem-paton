@@ -5,9 +5,8 @@ const mongoose = require('mongoose');
 
 const {Driver} = require('../models');
 const {BrokerShipper} = require('../models');
-// const {DATABASE_URL} = require('./config'); 
 
-const {DATABASE_URL} = require('../config'); 
+const {DATABASE_URL, TEST_DATABASE_URL} = require('../config'); 
 const {app, runServer, closeServer} = require('../server');
 
 const should = chai.should();
@@ -64,16 +63,21 @@ function seedBrokerShipper() {
     return BrokerShipper.insertMany(seedData);
 }
 
+function dropTestData() {
+    return mongoose.connection.dropDatabase();
+}
+
 describe('Posts', function(){
     before(function(){
-        return (runServer(DATABASE_URL), seedDriver(), seedBrokerShipper());
+        return runServer(TEST_DATABASE_URL);
     });
     
     beforeEach(function() {
+        return seedDriver()  //NEED A WAY TO CALL seedBrokerShipper() TOO
     });
     
     afterEach(function() {
-        // return dropTestData();
+        return dropTestData();
     });
 
     after(function() {
@@ -81,16 +85,19 @@ describe('Posts', function(){
     });
     
     describe('GET', function() {
-        it('should list item on GET', function () {
+        it.only('should list item on GET', function () {
+            seedDriver();
+
         return chai.request(app)
             .get('/drivers')
             .then(function(res) {
+                console.log("LOOK ==>",res.body)
                 res.should.have.status(200);
                 res.should.be.json;
                 res.body.should.be.a('array');
                 res.body.length.should.be.at.least(1);
     
-                const expectedKeys = ['id', 'name', 'truckInfo', 'freight', 'phone'];
+                const expectedKeys = ['id', 'driver', 'truck', 'freight', 'phoneNum'];
                 res.body.forEach(function(item) {
                     item.should.be.a('object');
                     item.should.include.keys(expectedKeys);
@@ -102,19 +109,19 @@ describe('Posts', function(){
     
     describe('POST', function() {
         it('should add an item on POST', function() {
-            const newDriver = {
-                truck: [{
-                    truckNum: faker.lorem.word(),
-                    trailerNum: faker.lorem.word(),
-                    location: faker.address.state(),
-                }],
-                driver: {
-                    firstName: faker.name.firstName(),
-                    lastName: faker.name.lastName()
-                },
-                freight: faker.lorem.word(),
-                phonNum: faker.phone.phoneNumber()
-            };
+            const newDriver = generateDriver();
+            //     truck: [{
+            //         truckNum: faker.lorem.word(),
+            //         trailerNum: faker.lorem.word(),
+            //         location: faker.address.state(),
+            //     }],
+            //     driver: {
+            //         firstName: faker.name.firstName(),
+            //         lastName: faker.name.lastName()
+            //     },
+            //     freight: faker.lorem.word(),
+            //     phonNum: faker.phone.phoneNumber()
+            // };
 
             return chai.request(app)
                 .post('/drivers')
@@ -140,15 +147,16 @@ describe('Posts', function(){
     });
 
     describe('PUT', function() {
-        it.only('should update items on PUT', function() {
-        const updateDriver = {
-                truck: [{
-                    truckNum: faker.lorem.word(),
-                    trailerNum: faker.lorem.word(),
-                    location: faker.address.state(),
-                }],
-                freight: faker.lorem.word(),
-        };
+        it('should update items on PUT', function() {
+        const updateDriver = generateDriver();
+        // {
+        //         truck: [{
+        //             truckNum: faker.lorem.word(),
+        //             trailerNum: faker.lorem.word(),
+        //             location: faker.address.state(),
+        //         }],
+        //         freight: faker.lorem.word(),
+        // };
         return chai.request(app)
             .get('/drivers')
             .then(function(res) {

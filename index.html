@@ -16,18 +16,23 @@
       <div>
         <h1>The Big Truck</h1>
         <div class='description'>Brief description of the app, connecting drivers with brokers.</div>
-        <form /*here we can  input our classes and such*/>
-          <select id='selectorId'>
-            <option value='driver' selected='selected'>I am a driver looking for a load</option>
-            <option value='broker' selected='selected'>I am a broker looking for a driver</option>
-          </select>
-          <input type='text' placeholder='Enter location of search' name='' value=''>
-          <button type='submit' name='button'>Search</button>
-        </form> 
+          <div class='search-box'>
+            <form /*here we can  input our classes and such*/>
+              <select id='selectorId'>
+                <option value='driver' selected='selected'>I am a driver looking for a load</option>
+                <option value='broker' selected='selected'>I am a broker looking for a driver</option>
+              </select>
+              <input type='text' placeholder='Enter location of search' name='' value=''>
+              <button type='submit' name='button'>Search</button>
+            </form> 
+          </div>
       </div>
+
     </div>
     
-    <div class='results'>This is a default area where results can be shown</div>
+    <div class='results'>This is a default area where results can be shown
+      <div class='entry'>let's enter dummy info</div>
+    </div>
 
   </body>
 </html>

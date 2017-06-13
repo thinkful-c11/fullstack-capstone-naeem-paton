@@ -85,6 +85,7 @@ describe('Posts', function(){
   after(function() {
     return closeServer();
   });
+
   describe('Drivers Test', function(){
     describe('GET', function() {
       it('This should get the drivers information', function () {
@@ -293,7 +294,7 @@ describe('Posts', function(){
               res.body.companyName.should.equal(updateBroker.companyName);
               res.body.load.puLocation.should.equal(updateBroker.load.puLocation);
               res.body.load.delLocation.should.equal(updateBroker.load.delLocation);
-              res.body.load.pudate.should.equal(updateBroker.load.pudate);
+              res.body.load.pudate.should.be.sameMoment(updateBroker.load.pudate);
               res.body.load.freight.should.equal(updateBroker.load.freight);
               res.body.phone.should.equal(updateBroker.phone);
             });

@@ -1,6 +1,17 @@
 const faker = require('faker');
 const {Driver, BrokerShipper} = require('./models');
 const {DATABASE_URL} = require('./config');
+const {app, runServer, closeServer} = require('./server');
+const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT AND FIX BUG IN runServer() not
+//                                        NOT A FUNCTION ERROR LINE 9
+
+
+//runServer(DATABASE_URL).then( () => seedBrokerShipper()).then(() => closeServer())
+// runServer(DATABASE_URL)
+//     .then( () => {
+//         return Promise.all([seedDriver(), seedBrokerShipper()])
+//     })
+//     .then(() => closeServer());
 
 function generateDriver() {
     return {
@@ -25,7 +36,7 @@ function seedDriver() {
     for (let i = 0; i < 10; i++) {
         seedData.push(generateDriver());
     }
-    return drivers.insertMany(seedData);
+    return Driver.insertMany(seedData);
 }
 
 function generateBrokerShipper() {
@@ -33,8 +44,8 @@ function generateBrokerShipper() {
         companyName: faker.company.companyName(),
         phone: faker.phone.phoneNumber,
         load: {
-            puLocation: faker.lorem.state(),
-            delLocation: faker.lorem.state(),
+            puLocation: faker.address.state(),
+            delLocation: faker.address.state(),
             pudate: faker.date.future(),
             freight: faker.lorem.word()
         },
@@ -49,7 +60,7 @@ function seedBrokerShipper() {
     for (let i = 0; i < 20; i++) {
         seedData.push(generateBrokerShipper());
     }
-    return brokershippers.insertMany(seedData);
+    return BrokerShipper.insertMany(seedData);
 }
 
 

@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const {Driver} = require('./models');
 const {BrokerShipper} = require('./models');
 const {DATABASE_URL, PORT} = require('./config');
+const {generateBrokerShipper, generateDriver, seedBrokerShipper, seedDriver} = require('./seedData')
+
 
 const app = express();
 
@@ -22,7 +24,9 @@ app.get('/drivers', (req, res) => {
       .find()
       //.exec()
       .then(drivers => {
-          res.json(drivers.map((driver) => driver.apiRepr()));
+          res.json(drivers.map((driver) =>{
+            return driver.apiRepr()
+            }));
       })
       .catch(err => {
           console.error(err);
@@ -92,6 +96,7 @@ app.post('/drivers', (req, res) => {
     });
 
 });
+
 
 app.post('/brokershippers', (req, res) => {
   const requiredFields = ['companyName', 'phone', 'load'];

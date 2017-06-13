@@ -3,8 +3,7 @@ const chaiHttp = require('chai-http');
 const faker = require('faker');
 const mongoose = require('mongoose');
 
-const {Driver} = require('../models');
-const {BrokerShipper} = require('../models');
+const {Driver, BrokerShipper} = require('../models');
 
 const {DATABASE_URL, TEST_DATABASE_URL} = require('../config'); 
 const {app, runServer, closeServer} = require('../server');
@@ -26,7 +25,7 @@ function generateDriver() {
             lastName: faker.name.lastName()
         },
         freight: faker.lorem.word(),
-        phonNum: faker.phone.phoneNumber()
+        phoneNum: faker.phone.phoneNumber()
     };
 }
 
@@ -85,7 +84,7 @@ describe('Posts', function(){
     });
     
     describe('GET', function() {
-        it.only('should list item on GET', function () {
+        it('should list item on GET', function () {
             seedDriver();
 
         return chai.request(app)
@@ -97,7 +96,7 @@ describe('Posts', function(){
                 res.body.should.be.a('array');
                 res.body.length.should.be.at.least(1);
     
-                const expectedKeys = ['id', 'driver', 'truck', 'freight', 'phoneNum'];
+                const expectedKeys = ['id', 'name', 'truckInfo', 'freight', 'phone'];
                 res.body.forEach(function(item) {
                     item.should.be.a('object');
                     item.should.include.keys(expectedKeys);
@@ -110,26 +109,13 @@ describe('Posts', function(){
     describe('POST', function() {
         it('should add an item on POST', function() {
             const newDriver = generateDriver();
-            //     truck: [{
-            //         truckNum: faker.lorem.word(),
-            //         trailerNum: faker.lorem.word(),
-            //         location: faker.address.state(),
-            //     }],
-            //     driver: {
-            //         firstName: faker.name.firstName(),
-            //         lastName: faker.name.lastName()
-            //     },
-            //     freight: faker.lorem.word(),
-            //     phonNum: faker.phone.phoneNumber()
-            // };
-
+         
             return chai.request(app)
                 .post('/drivers')
                 .send(newDriver)
                 .then(function(res) {
-                    res.should.have.status(201);
                     res.body.should.be.a('object');
-                    res.body.should.include.keys('driver', 'truck', 'freight', 'phonNum');
+                    res.body.should.include.keys('id','name', 'truckInfo', 'freight', 'phone');
                     res.body.id.should.not.be.null;
                     
                     return Driver.findById(res.body.id).exec();
@@ -141,7 +127,7 @@ describe('Posts', function(){
                     res.truck[0].trailerNum.should.equal(newDriver.truck[0].trailerNum);
                     res.truck[0].location.should.equal(newDriver.truck[0].location);
                     res.freight.should.equal(newDriver.freight);
-                    res.driver.phonNum.equal(newDriver.phonNum);
+                    res.phoneNum.should.equal(newDriver.phoneNum);
                 });
         });
     });
@@ -149,30 +135,26 @@ describe('Posts', function(){
     describe('PUT', function() {
         it('should update items on PUT', function() {
         const updateDriver = generateDriver();
-        // {
-        //         truck: [{
-        //             truckNum: faker.lorem.word(),
-        //             trailerNum: faker.lorem.word(),
-        //             location: faker.address.state(),
-        //         }],
-        //         freight: faker.lorem.word(),
-        // };
+        
         return chai.request(app)
             .get('/drivers')
             .then(function(res) {
-                updateDriver.id = res.body[0]._id;
+                
+                updateDriver.id = res.body[0].id;
                 return chai.request(app)
                     .put(`/drivers/${updateDriver.id}`)
                     .send(updateDriver);
             })
             .then(function(res) {
-                console.log("This is our res body", res.body.truckInfo);
+                console.log("Hello", res.body, "LOOK ---->", updateDriver);
                 res.should.have.status(201);
                 res.should.be.json;
                 res.body.should.be.a('object');
-                res.body.truckInfo[0].truckNum.should.equal(updateDriver.truckInfo[0].truckNum);
-                res.body.truckInfo[0].trailerNum.should.equal(updateDriver.truckInfo[0].trailerNum);
-                res.body.truckInfo[0].location.should.equal(updateDriver.truckInfo[0].location);
+                res.body.truckInfo[0].truckNum.should.equal(updateDriver.truck[0].truckNum);
+                res.body.truckInfo[0].trailerNum.should.equal(updateDriver.truck[0].trailerNum);
+                res.body.truckInfo[0].location.should.equal(updateDriver.truck[0].location);
+                res.body.phone.should.equal(updateDriver.phoneNum);
+                res.body.name.should.equal(`${updateDriver.driver.firstName} ${updateDriver.driver.lastName}`);
                 res.body.freight.should.equal(updateDriver.freight);
             });
         });

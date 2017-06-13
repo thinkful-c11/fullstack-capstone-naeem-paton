@@ -18,7 +18,7 @@ const driverSchema = mongoose.Schema({
         lastName: {type: String},
     },
     freight: {type: String},
-    phoneNum: {type: Number}
+    phoneNum: {type: String}
 });
 
 driverSchema.virtual('driverFullName').get(function() {
@@ -35,7 +35,7 @@ driverSchema.methods.apiRepr = function() {
         name: this.driverFullName,
         truckInfo: this.truck,
         freight: this.freight,
-        phone: this.phoneNum,
+        phone: this.phoneNum || "98990877889",      //CHECK OUT THE HACK, RESEARCH MONGOOSE DROPPING THE undefined 
     };
 };
 
@@ -48,7 +48,7 @@ const brokerShipperSchema = mongoose.Schema({
         unique: true
     },
     phone: {
-        type: Number,
+        type: String,
         required: true
     },
     load:{
@@ -64,7 +64,7 @@ brokerShipperSchema.methods.apiRepr = function() {
         id: this._id,
         name: this.companyName,
         load: this.loadInfo,
-        phone: this.phoneMessage
+        phone: this.phoneMessage || "98990877889",
     };
 };
 

@@ -25,9 +25,6 @@ driverSchema.virtual('driverFullName').get(function() {
     return `${this.driver.firstName} ${this.driver.lastName}`.trim();
 });
 
-// driverSchema.virtual('truckInfo').get(function() {
-//     return `Uses truck #: ${this.truck[0].truckNum} and trailer #: ${this.truck[0].trailerNum}`.trim();
-// });
 
 driverSchema.methods.apiRepr = function() {
     return {
@@ -68,14 +65,6 @@ brokerShipperSchema.methods.apiRepr = function() {
     };
 };
 
-// brokerShipperSchema.virtual('loadInfo').get(function() {
-//     return `This ${this.load.freight}load p/u in ${this.load.puLocation}, ` +
-//     `${this.load.pudate} and del. to ${this.load.delLocation}`.trim();
-// });
-
-// brokerShipperSchema.virtual('phoneMessage').get(function() {
-//     return `Call us at ${this.phone} to pull this load!`.trim();
-// });
 
 const Driver = mongoose.model('Driver', driverSchema);
 const BrokerShipper = mongoose.model('BrokerShipper', brokerShipperSchema);

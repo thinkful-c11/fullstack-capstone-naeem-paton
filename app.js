@@ -1,3 +1,5 @@
+'use strict';
+
 const {DATABASE_URL, PORT} = require('./config');
 
 const appState = {
@@ -8,15 +10,15 @@ const appState = {
 
 
 
-function fetchDrivers(callback, pageURL){
+function fetchDrivers(search, pageURL = "http://localhost:8080/"){
     console.log("fetch")
    
 //`http://localhost:8080/${appState.search}`           BROKEN CODE ReferenceError: $ is not defined
-    $.getJSON("http://localhost:8080/drivers"), (response) => {
+    $.getJSON(`${pageURL}${appState.search}`, (response) => {
         console.log(response)
-    }
+    })
 }
-// fetchDrivers()
+fetchDrivers("drivers")
 
 // function emptyState(state = appState){
 //     state.search: '',

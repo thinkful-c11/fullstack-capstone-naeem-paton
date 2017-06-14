@@ -1,3 +1,4 @@
+'use strict';
 const faker = require('faker');
 const {Driver, BrokerShipper} = require('./models');
 const {DATABASE_URL} = require('./config');

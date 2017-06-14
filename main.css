@@ -19,7 +19,7 @@ h1 {
 }
 
 button {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .description {
@@ -35,11 +35,14 @@ button {
 .search-box {
   border: 2px solid black;
   width: 25%;
-  padding: 25px;
+  padding: 0 25px 25px 25px;
+  float: left;
+  margin-right: 10px;
 }
 
 .results {
   border: 2px solid black;
-  width: 75%;
+  width: 65%;
   float: right;
+  margin-left: 10px;
 }

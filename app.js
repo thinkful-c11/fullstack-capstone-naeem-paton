@@ -1,12 +1,31 @@
 'use strict';
 
-const {DATABASE_URL, PORT} = require('./config');
+//const {DATABASE_URL, PORT} = require('./config');
 
+
+//App State
 const appState = {
     search: '',
     availableDrivers: [],
     availableLoads: []
+};
+console.log(appState);
+
+//Mod Functions
+function addDrivers(state, response) {
+  state.availableDrivers = response;
 }
+
+function addLoad(state, response) {
+  state.availableLoads = response;
+}
+
+function addSearch(state, response) {
+  state.search = response;
+}
+
+
+const pageURL = 'http://localhost:8080/';
 
 
 

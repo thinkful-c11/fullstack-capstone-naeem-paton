@@ -7,9 +7,9 @@
 
 //App State
 const appState = {
-    search: '',
-    availableDrivers: [],
-    availableLoads: []
+  search: '',
+  availableDrivers: [],
+  availableLoads: []
 };
 
 ///////////////////////////////////////////////////////////////////////////
@@ -32,25 +32,33 @@ function addSearch(state, response) {
 }
 
 function emptyState(state = appState){
-    state.search = '',
+  state.search = '',
     state.availableDrivers = [],
     state.availableLoads = []
 }
 
 function queryDataBase(search, pageURL = "http://localhost:8080/"){
 
-   if($('#selectorId').val() === 'driver') {
+  if($('#selectorId').val() === 'driver') {
 
-        $.getJSON(`http://localhost:8080/drivers`, (response) => {
-            addDrivers(appState, response);
-            console.log(response);
+    fetch(`http://localhost:8080/drivers`).then(response => {
+       return response.json()
+     })
+        .then(data =>{
+          return addDrivers(appState, data)
+        })
+        .then(function(){
+          render(($("div.real-data")));
         });
-   }else {
-        $.getJSON(`http://localhost:8080/brokershippers`, (response) => {
-            addLoad(state, response);
-            console.log(response);
-        });
-   }
+  }else {
+    $.getJSON(`http://localhost:8080/brokershippers`, (response) => {
+       addLoad(state, response)
+            .then(function(){
+              return render(($("div.real-data")));
+            });
+       console.log(response);
+     });
+  }
 }
 
 
@@ -63,28 +71,40 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
 ///////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 function render(element){
-    let html = '';
-
-    if(appState.availableDrivers.length > 0) {
-     
-            appState.availableDrivers.forEach(driver => {
-                html += `
-                    <div class='real-data'>
-                        <h3>${appState.availableDrivers.companyName}</h3>
-                        <p>Currently in: ${appState.availableDrivers.truckInfo[0].location}</p>
-                        <p>${appState.availableDrivers.truckInfo[0].trailerType}</p>
-                        <p>Contact: ${appState.availableDrivers.name} S</p>
-                        <p>Phone: ${appState.availableDrivers.phone}</p>
+  let html = '';
+  if(appState.availableDrivers.length > 0) {
+    appState.availableDrivers.forEach(driver => {
+        html += `
+                    <div class='entry'>
+                        <h3><u>${driver.companyName}</u></h3>
+                        <p>Contact: ${driver.name}</p>
+                        <p>Phone: ${driver.phone}</p>
+                        <h4>Truck Information</h4>
+                        <p>Currently in: ${driver.truckInfo[0].location}</p>
+                        <p>Trailer Type: ${driver.truckInfo[0].trailerType}, Number: ${driver.truckInfo[0].trailerNum}</p>
+                        <p>Truck Number: ${driver.truckInfo[0].truckNum}</p>
                     </div>`
-            });
+      });
         
-    } else if(appState.availableLoads.length >0) {
-        html 
+  } else if(appState.availableLoads.length >0) {
+      appState.availableLoads.forEach(load => {
+        html +=`
+            <div class='entry'>
+                <h3><u>${driver.companyName}</u></h3>
+                <p>Contact: ${driver.name}</p>
+                <p>Phone: ${driver.phone}</p>
+                <h4>Truck Information</h4>
+                <p>Currently in: ${driver.truckInfo[0].location}</p>
+                <p>Trailer Type: ${driver.truckInfo[0].trailerType}, Number: ${driver.truckInfo[0].trailerNum}</p>
+                <p>Truck Number: ${driver.truckInfo[0].truckNum}</p>
+            </div>`
+        `
+      }); 
     } else {
-        //(no results found entry)
+      console.log("whelp it's empty");
     }
 
-    element.html(html);
+  element.html(html);
 	//element.removeClass("hidden");
 
 }
@@ -105,14 +125,13 @@ function renderSearch(element){
 
 $(function(){
 
-    $('form.search').submit(event => {
-        console.log("HIT")
-		event.preventDefault();
-
+  $('form.search').submit(event => {
+    console.log("HIT")
+    event.preventDefault();
 	    queryDataBase();
-        render($("div.real-data"));
+    render($("div.real-data"));
 		
-	})
+  })
 
 
 })

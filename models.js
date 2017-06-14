@@ -10,14 +10,15 @@ const driverSchema = mongoose.Schema({
     truck: {type: Array, 'default': [{
         truckNum: {type: String, default: " ", required: true},
         trailerNum: {type: String, default: " ", required: true},
-        location: {type: String, default: " ", required: true}
+        location: {type: String, default: " ", required: true},
+        trailerType: {type: String, default: " "},
     }]},
     //need to update driver to fleet manager
     fleetManager: {
         firstName: {type: String},
         lastName: {type: String},
     },
-    trailerType: {type: String},
+    
     phoneNum: {type: String},
     companyName: {type: String}
 });
@@ -33,7 +34,6 @@ driverSchema.methods.apiRepr = function() {
         companyName: this.companyName,
         name: this.managerFullName,
         truckInfo: this.truck,
-        trailerType: this.trailerType,
         phone: this.phoneNum || "98990877889",      //CHECK OUT THE HACK, RESEARCH MONGOOSE DROPPING THE undefined 
     };
 };

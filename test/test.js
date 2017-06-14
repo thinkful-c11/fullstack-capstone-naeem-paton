@@ -21,12 +21,13 @@ function generateDriver() {
       truckNum: faker.lorem.word(),
       trailerNum: faker.lorem.word(),
       location: faker.address.state(),
+      trailerType: faker.lorem.word(),
     }],
     fleetManager: {
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName()
     },
-    trailerType: faker.lorem.word(),
+   
     phoneNum: faker.phone.phoneNumber(),
     companyName: faker.company.companyName()
   };
@@ -88,7 +89,7 @@ describe('Posts', function(){
 
   describe('Drivers Test', function(){
     describe('GET', function() {
-      it('This should get the drivers information', function () {
+      it('should get the drivers information', function () {
 
         return chai.request(app)
                 .get('/drivers')
@@ -98,7 +99,7 @@ describe('Posts', function(){
                   res.body.should.be.a('array');
                   res.body.length.should.be.at.least(1);
         
-                  const expectedKeys = ['id', 'name', 'truckInfo', 'trailerType', 'phone', 'companyName'];
+                  const expectedKeys = ['id', 'name', 'truckInfo', 'phone', 'companyName'];
                   res.body.forEach(function(item) {
                     item.should.be.a('object');
                     item.should.include.keys(expectedKeys);
@@ -108,8 +109,9 @@ describe('Posts', function(){
     });
 
     describe('GET by ID', function () {
-      it('This should get the drivers information by id', function () {
+      it('should get the drivers information by id', function () {
         let testDriver = {};
+
         return chai.request(app)
                 .get('/drivers')
                 .then(function(res) {    
@@ -118,15 +120,18 @@ describe('Posts', function(){
                     .get(`/drivers/${testDriver.id}`);
                 })
                 .then(function(res) {
+                  console.log("OJO *****+>", res.body)
+                  console.log('LOOK _----+>', testDriver)  
+                  
                   res.should.have.status(200);
                   res.should.be.json;
                   res.body.should.be.a('object');
                   res.body.truckInfo[0].truckNum.should.equal(testDriver.truckInfo[0].truckNum);
                   res.body.truckInfo[0].trailerNum.should.equal(testDriver.truckInfo[0].trailerNum);
                   res.body.truckInfo[0].location.should.equal(testDriver.truckInfo[0].location);
+                  res.body.truckInfo[0].trailerType.should.equal(testDriver.truckInfo[0].trailerType);
                   res.body.phone.should.equal(testDriver.phone);
                   res.body.name.should.equal(testDriver.name);
-                  res.body.trailerType.should.equal(testDriver.trailerType);
                   res.body.companyName.should.equal(testDriver.companyName);
                 
                 });
@@ -143,18 +148,19 @@ describe('Posts', function(){
                 .send(newDriver)
                 .then(function(res) {
                   res.body.should.be.a('object');
-                  res.body.should.include.keys('id','name', 'truckInfo', 'trailerType', 'phone', 'companyName');
+                  res.body.should.include.keys('id','name', 'truckInfo', 'phone', 'companyName');
                   res.body.id.should.not.be.null;
                     
                   return Driver.findById(res.body.id).exec();
                 })
                 .then(function(res){
-                  res.driver.firstName.should.equal(newDriver.driver.firstName);
-                  res.driver.lastName.should.equal(newDriver.driver.lastName);
+                  console.log("LOOK----==>", res, "OJO----=>", newDriver)
+                  res.fleetManager.firstName.should.equal(newDriver.fleetManager.firstName);
+                  res.fleetManager.lastName.should.equal(newDriver.fleetManager.lastName);
                   res.truck[0].truckNum.should.equal(newDriver.truck[0].truckNum);
                   res.truck[0].trailerNum.should.equal(newDriver.truck[0].trailerNum);
                   res.truck[0].location.should.equal(newDriver.truck[0].location);
-                  res.trailerType.should.equal(newDriver.trailerType);
+                  res.truck[0].trailerType.should.equal(newDriver.truck[0].trailerType);
                   res.phoneNum.should.equal(newDriver.phoneNum);
                   res.companyName.should.equal(newDriver.companyName);
                 });
@@ -175,22 +181,24 @@ describe('Posts', function(){
                     .send(updateDriver);
             })
             .then(function(res) {
+              console.log("LOOK----==>", res.body, "OJO----=>", updateDriver)
               res.should.have.status(201);
               res.should.be.json;
               res.body.should.be.a('object');
+              res.body.truckInfo[0].trailerType.should.equal(updateDriver.truck[0].trailerType);
               res.body.truckInfo[0].truckNum.should.equal(updateDriver.truck[0].truckNum);
               res.body.truckInfo[0].trailerNum.should.equal(updateDriver.truck[0].trailerNum);
               res.body.truckInfo[0].location.should.equal(updateDriver.truck[0].location);
               res.body.phone.should.equal(updateDriver.phoneNum);
-              res.body.name.should.equal(`${updateDriver.driver.firstName} ${updateDriver.driver.lastName}`);
-              res.body.trailerType.should.equal(updateDriver.trailerType);
+              res.body.name.should.equal(`${updateDriver.fleetManager.firstName} ${updateDriver.fleetManager.lastName}`);
+              
               res.body.companyName.should.equal(updateDriver.companyName);
             });
       });
     });
     
-    describe('DELETE', function() {
-      it('should delete items on DELETE', function() { 
+    describe('DELETE drivers', function() {
+      it('should delete items from drivers\' table on DELETE', function() { 
         return chai.request(app)
                 .get('/drivers')
                 .then(function(res) {
@@ -206,7 +214,7 @@ describe('Posts', function(){
 
   describe('Broker/Shipper Test', function (){
     describe('GET', function() {
-      it('This should get the broker/shipper information', function () {
+      it('should get the broker/shipper information', function () {
 
         return chai.request(app)
             .get('/brokershippers')
@@ -226,7 +234,7 @@ describe('Posts', function(){
     });
 
     describe('GET by ID', function () {
-      it('This should get the broker/shippers information by id', function () {
+      it('should get the broker/shippers information by id', function () {
         let testBroker = {};
         return chai.request(app)
                 .get('/brokershippers')
@@ -259,7 +267,6 @@ describe('Posts', function(){
                 .post('/brokershippers')
                 .send(newBroker)
                 .then(function(res) {
-                  console.log("LOOK ----->", newBroker)
                   res.body.should.be.a('object');
                   res.body.should.include.keys('id', 'companyName', 'load', 'phone');
                   res.body.id.should.not.be.null;
@@ -305,7 +312,7 @@ describe('Posts', function(){
     });
     
     describe('DELETE', function() {
-      it('should delete items on DELETE', function() { 
+      it('should delete items from brokershipper table on DELETE', function() { 
         return chai.request(app)
                 .get('/brokershippers')
                 .then(function(res) {

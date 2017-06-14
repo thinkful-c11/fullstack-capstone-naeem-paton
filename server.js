@@ -73,7 +73,7 @@ app.get('/brokershippers/:id', (req, res) => {
 });
 
 app.post('/drivers', (req, res) => {
-  const requiredFields = ['fleetManager', 'truck', 'trailerType', 'phoneNum', 'companyName'];
+  const requiredFields = ['fleetManager', 'truck', 'phoneNum', 'companyName'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -87,7 +87,6 @@ app.post('/drivers', (req, res) => {
     .create({
       fleetManager: req.body.fleetManager,
       truck: req.body.truck,
-      trailerType: req.body.trailerType,
       phoneNum: req.body.phoneNum,
       companyName: req.body.companyName
     })
@@ -134,7 +133,7 @@ app.put('/drivers/:id', (req, res) => {
   }
 
   const updated = {};
-  const updateableFields = ['fleetManager', 'truck', 'trailerType', 'phoneNum', 'companyName'];
+  const updateableFields = ['fleetManager', 'truck', 'phoneNum', 'companyName'];
   updateableFields.forEach(field => {
     if (field in req.body) {
       updated[field] = req.body[field];

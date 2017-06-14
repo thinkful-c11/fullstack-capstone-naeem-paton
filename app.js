@@ -12,7 +12,13 @@ const appState = {
     availableLoads: []
 };
 
-//Mod Functions
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+//////////////////                              //////////////////////////
+///////////////////    MOD FUNCTIONS            ////////////////////////// 
+//////////////////                               ///////////////////////////
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 function addDrivers(state, response) {
   state.availableDrivers = response;
 }
@@ -25,28 +31,45 @@ function addSearch(state, response) {
   state.search = response;
 }
 
+function emptyState(state = appState){
+    state.search = '',
+    state.availableDrivers = [],
+    state.availableLoads = []
+}
 
 function queryDataBase(search, pageURL = "http://localhost:8080/"){
-   
-//`http://localhost:8080/${appState.search}`           BROKEN CODE ReferenceError: $ is not defined
-    $.getJSON(`${pageURL}drivers`, (response) => {
-        addDrivers(appState, response);
-        console.log(response);
-    });
+
+   if($('#selectorId').val() === 'driver') {
+
+        $.getJSON(`http://localhost:8080/drivers`, (response) => {
+            addDrivers(appState, response);
+            console.log(response);
+        });
+   }else {
+        $.getJSON(`http://localhost:8080/brokershippers`, (response) => {
+            addLoad(state, response);
+            console.log(response);
+        });
+   }
 }
-queryDataBase();
-console.log('This is our app state', appState);
 
-//Render Functions
 
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+//////////////////                              //////////////////////////
+///////////////////   RENDER FUNCTIONS         ////////////////////////// 
+//////////////////                               ///////////////////////////
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 function render(element){
     let html = '';
 
     if(appState.availableDrivers.length > 0) {
-        function(){
+     
             appState.availableDrivers.forEach(driver => {
                 html += `
-                    <div class='entry'>
+                    <div class='real-data'>
                         <h3>${appState.availableDrivers.companyName}</h3>
                         <p>Currently in: ${appState.availableDrivers.truckInfo[0].location}</p>
                         <p>${appState.availableDrivers.truckInfo[0].trailerType}</p>
@@ -54,20 +77,42 @@ function render(element){
                         <p>Phone: ${appState.availableDrivers.phone}</p>
                     </div>`
             });
-        }
+        
     } else if(appState.availableLoads.length >0) {
-        html +=
+        html 
     } else {
         //(no results found entry)
     }
+
+    element.html(html);
+	//element.removeClass("hidden");
+
 }
 
-// function emptyState(state = appState){
-//     state.search: '',
-//     state.availableDrivers: [],
-//     state.availableLoads: []
-// }
+
 
 function renderSearch(element){
 
 }
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+//////////////////                              //////////////////////////
+///////////////////    EVENT LISTENERS            ////////////////////////// 
+//////////////////                               ///////////////////////////
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+$(function(){
+
+    $('form.search').submit(event => {
+        console.log("HIT")
+		event.preventDefault();
+
+	    queryDataBase();
+        render($("div.real-data"));
+		
+	})
+
+
+})

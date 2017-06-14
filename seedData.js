@@ -8,26 +8,26 @@ const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT 
 
 
 //UNCOMMENTING THE FOLLOWING LINES OF CODE WILL BREAK THE APP. BUT IT WORKED FINE EARLIER WTW?
-// runServer(DATABASE_URL)
-//     .then( () => {
+runServer(DATABASE_URL)
+    .then( () => {
   
-//       Driver
-//             .find()
-//             .then(function(drivers){
-//               if(drivers.length === 0){
-//                 return seedDriver();
-//               }else{console.log('You got drivers ===>', drivers.length);}
-//             });                                                                    
+      Driver
+            .find()
+            .then(function(drivers){
+              if(drivers.length === 0){
+                return seedDriver();
+              }else{console.log('You got drivers ===>', drivers.length);}
+            });                                                                    
 
-//       BrokerShipper
-//             .find()
-//             .then( (brokershippers) =>{
-//               if(brokershippers.length === 0){
-//                 return seedBrokerShipper();
-//               }else{console.log('You got brokers ===>', brokershippers.length);}
-//             });
+      BrokerShipper
+            .find()
+            .then( (brokershippers) =>{
+              if(brokershippers.length === 0){
+                return seedBrokerShipper();
+              }else{console.log('You got brokers ===>', brokershippers.length);}
+            });
             
-//     });
+    });
 
 
 
@@ -37,13 +37,15 @@ function generateDriver() {
         truckNum: faker.lorem.word(),
         trailerNum: faker.lorem.word(),
         location: faker.address.state(),
+        trailerType: faker.lorem.word(),
+
       }],
-    driver: {
+    fleetManager: {
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName()
       },
-    freight: faker.lorem.word(),
-    phonNum: faker.phone.phoneNumber()
+    phonNum: faker.phone.phoneNumber(),
+    companyName: faker.company.companyName()
   };
 }
 
@@ -51,7 +53,7 @@ function seedDriver() {
   console.info('Seeding test data....');
     
   const seedData = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     seedData.push(generateDriver());
   }
   return Driver.insertMany(seedData);
@@ -75,7 +77,7 @@ function seedBrokerShipper() {
   console.info('Seeding test data....');
     
   const seedData = [];
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 10; i++) {
     seedData.push(generateBrokerShipper());
   }
   return BrokerShipper.insertMany(seedData);

@@ -1,6 +1,5 @@
 'use strict';
 
-const {DATABASE_URL, PORT} = require('./config');
 
 const appState = {
     search: '',

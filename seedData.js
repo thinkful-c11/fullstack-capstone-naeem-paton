@@ -11,74 +11,74 @@ const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT 
 // runServer(DATABASE_URL)
 //     .then( () => {
   
-//             Driver
+//       Driver
 //             .find()
 //             .then(function(drivers){
-//                 if(drivers.length === 0){
-//                     return seedDriver()
-//                 }else{console.log("You got drivers ===>", drivers.length)}
-//             })                                                                    
+//               if(drivers.length === 0){
+//                 return seedDriver();
+//               }else{console.log('You got drivers ===>', drivers.length);}
+//             });                                                                    
 
-//             BrokerShipper
+//       BrokerShipper
 //             .find()
 //             .then( (brokershippers) =>{
-//                    if(brokershippers.length === 0){
-//                     return seedBrokerShipper()
-//                 }else{console.log("You got brokers ===>", brokershippers.length)}
-//             })
+//               if(brokershippers.length === 0){
+//                 return seedBrokerShipper();
+//               }else{console.log('You got brokers ===>', brokershippers.length);}
+//             });
             
-//     })
+//     });
 
 
 
 function generateDriver() {
-    return {
-        truck: [{
-            truckNum: faker.lorem.word(),
-            trailerNum: faker.lorem.word(),
-            location: faker.address.state(),
-        }],
-        driver: {
-            firstName: faker.name.firstName(),
-            lastName: faker.name.lastName()
-        },
-        freight: faker.lorem.word(),
-        phonNum: faker.phone.phoneNumber()
-    };
+  return {
+    truck: [{
+        truckNum: faker.lorem.word(),
+        trailerNum: faker.lorem.word(),
+        location: faker.address.state(),
+      }],
+    driver: {
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName()
+      },
+    freight: faker.lorem.word(),
+    phonNum: faker.phone.phoneNumber()
+  };
 }
 
 function seedDriver() {
-    console.info('Seeding test data....');
+  console.info('Seeding test data....');
     
-    const seedData = [];
-    for (let i = 0; i < 10; i++) {
-        seedData.push(generateDriver());
-    }
-    return Driver.insertMany(seedData);
+  const seedData = [];
+  for (let i = 0; i < 10; i++) {
+    seedData.push(generateDriver());
+  }
+  return Driver.insertMany(seedData);
 }
 
 function generateBrokerShipper() {
-    return {
-        companyName: faker.company.companyName(),
-        phone: faker.phone.phoneNumber,
-        load: {
-            puLocation: faker.address.state(),
-            delLocation: faker.address.state(),
-            pudate: faker.date.future(),
-            freight: faker.lorem.word()
-        },
-        phonNum: faker.phone.phoneNumber()
-    };
+  return {
+    companyName: faker.company.companyName(),
+    phone: faker.phone.phoneNumber,
+    load: {
+        puLocation: faker.address.state(),
+        delLocation: faker.address.state(),
+        pudate: faker.date.future(),
+        freight: faker.lorem.word()
+      },
+    phonNum: faker.phone.phoneNumber()
+  };
 }
 
 function seedBrokerShipper() {
-    console.info('Seeding test data....');
+  console.info('Seeding test data....');
     
-    const seedData = [];
-    for (let i = 0; i < 20; i++) {
-        seedData.push(generateBrokerShipper());
-    }
-    return BrokerShipper.insertMany(seedData);
+  const seedData = [];
+  for (let i = 0; i < 20; i++) {
+    seedData.push(generateBrokerShipper());
+  }
+  return BrokerShipper.insertMany(seedData);
 }
 
 

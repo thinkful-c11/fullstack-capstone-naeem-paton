@@ -22,13 +22,13 @@ function generateDriver() {
       trailerNum: faker.lorem.word(),
       location: faker.address.state(),
     }],
-        //faker.company.companyName()
-    driver: {
+    fleetManager: {
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName()
     },
-    freight: faker.lorem.word(),
-    phoneNum: faker.phone.phoneNumber()
+    trailerType: faker.lorem.word(),
+    phoneNum: faker.phone.phoneNumber(),
+    companyName: faker.company.companyName()
   };
 }
 
@@ -98,7 +98,7 @@ describe('Posts', function(){
                   res.body.should.be.a('array');
                   res.body.length.should.be.at.least(1);
         
-                  const expectedKeys = ['id', 'name', 'truckInfo', 'freight', 'phone'];
+                  const expectedKeys = ['id', 'name', 'truckInfo', 'trailerType', 'phone', 'companyName'];
                   res.body.forEach(function(item) {
                     item.should.be.a('object');
                     item.should.include.keys(expectedKeys);
@@ -126,7 +126,8 @@ describe('Posts', function(){
                   res.body.truckInfo[0].location.should.equal(testDriver.truckInfo[0].location);
                   res.body.phone.should.equal(testDriver.phone);
                   res.body.name.should.equal(testDriver.name);
-                  res.body.freight.should.equal(testDriver.freight);
+                  res.body.trailerType.should.equal(testDriver.trailerType);
+                  res.body.companyName.should.equal(testDriver.companyName);
                 
                 });
       });
@@ -142,7 +143,7 @@ describe('Posts', function(){
                 .send(newDriver)
                 .then(function(res) {
                   res.body.should.be.a('object');
-                  res.body.should.include.keys('id','name', 'truckInfo', 'freight', 'phone');
+                  res.body.should.include.keys('id','name', 'truckInfo', 'trailerType', 'phone', 'companyName');
                   res.body.id.should.not.be.null;
                     
                   return Driver.findById(res.body.id).exec();
@@ -153,8 +154,9 @@ describe('Posts', function(){
                   res.truck[0].truckNum.should.equal(newDriver.truck[0].truckNum);
                   res.truck[0].trailerNum.should.equal(newDriver.truck[0].trailerNum);
                   res.truck[0].location.should.equal(newDriver.truck[0].location);
-                  res.freight.should.equal(newDriver.freight);
+                  res.trailerType.should.equal(newDriver.trailerType);
                   res.phoneNum.should.equal(newDriver.phoneNum);
+                  res.companyName.should.equal(newDriver.companyName);
                 });
       });
     });
@@ -181,7 +183,8 @@ describe('Posts', function(){
               res.body.truckInfo[0].location.should.equal(updateDriver.truck[0].location);
               res.body.phone.should.equal(updateDriver.phoneNum);
               res.body.name.should.equal(`${updateDriver.driver.firstName} ${updateDriver.driver.lastName}`);
-              res.body.freight.should.equal(updateDriver.freight);
+              res.body.trailerType.should.equal(updateDriver.trailerType);
+              res.body.companyName.should.equal(updateDriver.companyName);
             });
       });
     });

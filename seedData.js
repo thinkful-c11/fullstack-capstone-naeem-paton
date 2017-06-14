@@ -5,6 +5,8 @@ const {app, runServer, closeServer} = require('./server');
 const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT AND FIX BUG IN runServer() not
 //                                        NOT A FUNCTION ERROR LINE 9
 
+
+//UNCOMMENTING THE FOLLOWING LINES OF CODE WILL BREAK THE APP. BUT IT WORKED FINE EARLIER WTW?
 // runServer(DATABASE_URL)
 //     .then( () => {
   
@@ -14,7 +16,7 @@ const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT 
 //                 if(drivers.length === 0){
 //                     return seedDriver()
 //                 }else{console.log("You got drivers ===>", drivers.length)}
-//             })
+//             })                                                                    
 
 //             BrokerShipper
 //             .find()

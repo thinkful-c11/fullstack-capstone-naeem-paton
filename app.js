@@ -11,7 +11,7 @@ const appState = {
 function fetchDrivers(callback, pageURL){
     console.log("fetch")
    
-//`http://localhost:8080/${appState.search}`
+//`http://localhost:8080/${appState.search}`           BROKEN CODE ReferenceError: $ is not defined
     $.getJSON("http://localhost:8080/drivers"), (response) => {
         console.log(response)
     }

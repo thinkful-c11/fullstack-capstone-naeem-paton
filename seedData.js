@@ -6,7 +6,33 @@ const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT 
 //                                        NOT A FUNCTION ERROR LINE 9
 
 
-//runServer(DATABASE_URL).then( () => seedBrokerShipper()).then(() => closeServer())
+runServer(DATABASE_URL)
+    .then( () => {
+   //     console.log("OJO ====>", app)
+       
+       // console.log("OJO ====>", res)
+            Driver
+            .find()
+            .then(function(drivers){
+            //console.log(res)
+                if(drivers.length === 0){
+                    return seedDriver()
+                }else{console.log("You got drivers ===>", drivers.length)}
+            })
+
+            BrokerShipper
+            .find()
+            .then( (brokershippers) =>{
+                   if(brokershippers.length === 0){
+                    return seedBrokerShipper()
+                }else{console.log("You got brokers ===>", brokershippers.length)}
+            })
+            
+    })
+
+
+  // seedDriver()})
+//
 // runServer(DATABASE_URL)
 //     .then( () => {
 //         return Promise.all([seedDriver(), seedBrokerShipper()])

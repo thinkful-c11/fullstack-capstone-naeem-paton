@@ -51,13 +51,15 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
           render(($("div.real-data")));
         });
   }else {
-    $.getJSON(`http://localhost:8080/brokershippers`, (response) => {
-       addLoad(state, response)
-            .then(function(){
-              return render(($("div.real-data")));
-            });
-       console.log(response);
-     });
+      fetch(`http://localhost:8080/brokershippers`).then(response => {
+       return response.json()
+     })
+        .then(data =>{
+          return addLoad(appState, data)
+        })
+        .then(function(){
+          render(($("div.real-data")));
+        });
   }
 }
 
@@ -83,22 +85,22 @@ function render(element){
                         <p>Currently in: ${driver.truckInfo[0].location}</p>
                         <p>Trailer Type: ${driver.truckInfo[0].trailerType}, Number: ${driver.truckInfo[0].trailerNum}</p>
                         <p>Truck Number: ${driver.truckInfo[0].truckNum}</p>
-                    </div>`
+                    </div>`;
       });
         
   } else if(appState.availableLoads.length >0) {
-      appState.availableLoads.forEach(load => {
+      appState.availableLoads.forEach(job => {
         html +=`
             <div class='entry'>
-                <h3><u>${driver.companyName}</u></h3>
-                <p>Contact: ${driver.name}</p>
-                <p>Phone: ${driver.phone}</p>
-                <h4>Truck Information</h4>
-                <p>Currently in: ${driver.truckInfo[0].location}</p>
-                <p>Trailer Type: ${driver.truckInfo[0].trailerType}, Number: ${driver.truckInfo[0].trailerNum}</p>
-                <p>Truck Number: ${driver.truckInfo[0].truckNum}</p>
-            </div>`
-        `
+                <h3><u>${job.companyName}</u></h3>
+                <p>Phone: ${job.phone}</p>
+                <h4>Load Information</h4>
+                <p>Freight: ${job.load.freight}</p>
+                <p>Pick-up Date: ${job.load.pudate}</p>
+                <p>Pick-up Location: ${job.load.puLocation}</p>
+                <p>Delivery Location: ${job.load.delLocation}</p>
+            </div>`;
+        
       }); 
     } else {
       console.log("whelp it's empty");

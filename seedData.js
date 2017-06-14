@@ -8,26 +8,26 @@ const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT 
 
 
 //UNCOMMENTING THE FOLLOWING LINES OF CODE WILL BREAK THE APP. BUT IT WORKED FINE EARLIER WTW?
-// runServer(DATABASE_URL)
-//     .then( () => {
+runServer(DATABASE_URL)
+    .then( () => {
   
-//       Driver
-//             .find()
-//             .then(function(drivers){
-//               if(drivers.length === 0){
-//                 return seedDriver();
-//               }else{console.log('You got drivers ===>', drivers.length);}
-//             });                                                                    
+      Driver
+            .find()
+            .then(function(drivers){
+              if(drivers.length === 0){
+                return seedDriver();
+              }else{console.log('You got drivers ===>', drivers.length);}
+            });                                                                    
 
-//       BrokerShipper
-//             .find()
-//             .then( (brokershippers) =>{
-//               if(brokershippers.length === 0){
-//                 return seedBrokerShipper();
-//               }else{console.log('You got brokers ===>', brokershippers.length);}
-//             });
+      BrokerShipper
+            .find()
+            .then( (brokershippers) =>{
+              if(brokershippers.length === 0){
+                return seedBrokerShipper();
+              }else{console.log('You got brokers ===>', brokershippers.length);}
+            });
             
-//     });
+    });
 
 
 
@@ -62,14 +62,13 @@ function seedDriver() {
 function generateBrokerShipper() {
   return {
     companyName: faker.company.companyName(),
-    phone: faker.phone.phoneNumber,
+    phone: faker.phone.phoneNumber(),
     load: {
         puLocation: faker.address.state(),
         delLocation: faker.address.state(),
         pudate: faker.date.future(),
         freight: faker.lorem.word()
       },
-    phonNum: faker.phone.phoneNumber()
   };
 }
 

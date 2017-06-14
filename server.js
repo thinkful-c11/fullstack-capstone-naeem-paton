@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const {Driver} = require('./models');
 const {BrokerShipper} = require('./models');
@@ -16,7 +17,7 @@ const app = express();
 
 app.use(morgan('common'));
 app.use(bodyParser.json());
-
+app.use(cors());
 mongoose.Promise = global.Promise;
 
 
@@ -72,7 +73,7 @@ app.get('/brokershippers/:id', (req, res) => {
 });
 
 app.post('/drivers', (req, res) => {
-  const requiredFields = ['driver', 'truck', 'freight', 'phoneNum'];
+  const requiredFields = ['fleetManager', 'truck', 'trailerType', 'phoneNum', 'companyName'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -84,11 +85,11 @@ app.post('/drivers', (req, res) => {
 
   Driver
     .create({
-      driver: req.body.driver,
+      fleetManager: req.body.fleetManager,
       truck: req.body.truck,
-      freight: req.body.freight,
+      trailerType: req.body.trailerType,
       phoneNum: req.body.phoneNum,
-      location: req.body.location
+      companyName: req.body.companyName
     })
     .then(drivers => res.status(201).json(drivers.apiRepr()))
     .catch(err => {
@@ -133,7 +134,7 @@ app.put('/drivers/:id', (req, res) => {
   }
 
   const updated = {};
-  const updateableFields = ['driver', 'truck', 'freight', 'phoneNum', 'location'];
+  const updateableFields = ['fleetManager', 'truck', 'trailerType', 'phoneNum', 'companyName'];
   updateableFields.forEach(field => {
     if (field in req.body) {
       updated[field] = req.body[field];
@@ -192,7 +193,9 @@ app.delete('/brokershippers/:id', (req, res) => {
     });
 });
 
-
+// app.listen(8080, function() {
+//   console.log('CORS-enabled web server listening on port 8080');
+// });
 
 app.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});

@@ -13,25 +13,27 @@ const driverSchema = mongoose.Schema({
         location: {type: String, default: " ", required: true}
     }]},
     //need to update driver to fleet manager
-    driver: {
+    fleetManager: {
         firstName: {type: String},
         lastName: {type: String},
     },
-    freight: {type: String},
-    phoneNum: {type: String}
+    trailerType: {type: String},
+    phoneNum: {type: String},
+    companyName: {type: String}
 });
 
-driverSchema.virtual('driverFullName').get(function() {
-    return `${this.driver.firstName} ${this.driver.lastName}`.trim();
+driverSchema.virtual('managerFullName').get(function() {
+    return `${this.fleetManager.firstName} ${this.fleetManager.lastName}`.trim();
 });
 
 
 driverSchema.methods.apiRepr = function() {
     return {
         id: this._id,
-        name: this.driverFullName,
+        companyName: this.companyName,
+        name: this.managerFullName,
         truckInfo: this.truck,
-        freight: this.freight,
+        trailerType: this.trailerType,
         phone: this.phoneNum || "98990877889",      //CHECK OUT THE HACK, RESEARCH MONGOOSE DROPPING THE undefined 
     };
 };

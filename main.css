@@ -45,4 +45,13 @@ button {
   width: 65%;
   float: right;
   margin-left: 10px;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.entry{
+  border: 2px solid grey;
+  text-align: left;
+  padding-left: 15px;
+  margin: 2px;
 }

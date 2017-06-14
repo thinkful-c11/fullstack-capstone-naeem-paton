@@ -90,13 +90,14 @@ function render(element){
         
   } else if(appState.availableLoads.length >0) {
       appState.availableLoads.forEach(job => {
+        let date = new Date(job.load.pudate);
         html +=`
             <div class='entry'>
                 <h3><u>${job.companyName}</u></h3>
                 <p>Phone: ${job.phone}</p>
                 <h4>Load Information</h4>
                 <p>Freight: ${job.load.freight}</p>
-                <p>Pick-up Date: ${job.load.pudate}</p>
+                <p>Pick-up Date: ${date.toDateString()}</p>
                 <p>Pick-up Location: ${job.load.puLocation}</p>
                 <p>Delivery Location: ${job.load.delLocation}</p>
             </div>`;

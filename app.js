@@ -63,6 +63,41 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
   }
 }
 
+function postDriver(search, pageURL = "http://localhost:8080/"){
+    
+    let data = {
+        companyName: $('#companyName').val(),
+        fleetManager: {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val()
+        },
+        phoneNum: $('#phoneNum').val(),
+        truck: {
+            truckNum: $('#truckNum').val(),
+            trailerNum: $('#trailerNum').val(),
+            trailerType: $('#trailerType').val(),
+            location: $('#location').val()
+        }
+    };
+
+    fetch(`http://localhost:8080/drivers`, {
+        method: 'post', 
+        headers: { 
+            'Accept': 'application/json, text/plain, /', 
+            'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }).then(response => {
+       return response.json()
+     })
+        .then(data =>{
+            console.log(data);
+            queryDataBase();
+        })
+        .then(function(){
+          render(($("div.real-data")));
+        });
+}
+
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -129,11 +164,13 @@ function renderSearch(element){
 $(function(){
 
   $('form.search').submit(event => {
-    console.log("HIT")
     event.preventDefault();
-	    queryDataBase();
-    render($("div.real-data"));
-		
+	queryDataBase();
+  })
+
+   $('#driver-post').submit(event => {
+    event.preventDefault();
+	postDriver();
   })
 
 

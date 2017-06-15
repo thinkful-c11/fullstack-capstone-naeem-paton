@@ -14,7 +14,7 @@ runServer(DATABASE_URL)
       Driver
             .find()
             .then(function(drivers){
-              if(drivers.length ){
+              if(drivers.length === 0){
                 return seedDriver();
               }else{console.log('You got drivers ===>', drivers.length);}
             });                                                                    

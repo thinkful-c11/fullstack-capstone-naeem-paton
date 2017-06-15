@@ -64,7 +64,7 @@ function generateBrokerShipper() {
     companyName: faker.company.companyName(),
     phone: faker.phone.phoneNumber(),
     load: {
-        puLocation: faker.address.state(),
+        puLocation: faker.address.stateAbbr(),
         delLocation: faker.address.state(),
         pudate: faker.date.future(),
         freight: faker.lorem.word()

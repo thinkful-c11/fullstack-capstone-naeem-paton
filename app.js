@@ -37,7 +37,10 @@ function emptyState(state = appState){
     state.availableLoads = [];
 }
 
-function queryDataBase(search, pageURL = 'http://localhost:8080/'){
+
+function queryDataBase(search, pageURL = "http://localhost:8080/"){
+  
+  emptyState();
 
   if($('#selectorId').val() === 'driver') {
 
@@ -141,7 +144,10 @@ function render(element){
   let html = '';
   if(appState.availableDrivers.length > 0) {
     appState.availableDrivers.forEach(driver => {
+
+
       html += `
+
                     <div class='entry'>
                         <h3><u>${driver.companyName}</u></h3>
                         <p>Contact: ${driver.name}</p>
@@ -169,7 +175,7 @@ function render(element){
         
     }); 
   } else {
-    html +=`
+    html += `
         <div>Sorry, no information found. Please try another search.</div>
         `;
   }

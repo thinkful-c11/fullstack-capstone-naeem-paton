@@ -181,7 +181,6 @@ describe('Posts', function(){
                     .send(updateDriver);
             })
             .then(function(res) {
-              console.log("LOOK----==>", res.body, "OJO----=>", updateDriver)
               res.should.have.status(201);
               res.should.be.json;
               res.body.should.be.a('object');
@@ -274,7 +273,6 @@ describe('Posts', function(){
                   return BrokerShipper.findById(res.body.id).exec();
                 })
                 .then(function(res){
-                  console.log("HEEY=====>", res)
                   res.companyName.should.equal(newBroker.companyName);
                   res.load.puLocation.should.equal(newBroker.load.puLocation);
                   res.load.delLocation.should.equal(newBroker.load.delLocation);

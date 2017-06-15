@@ -37,11 +37,30 @@ function emptyState(state = appState){
     state.availableLoads = [];
 }
 
-function queryByState (data, searchTerm){
+function queryDriverByState (data, searchTerm){
   for(let i in data){
-    if(searchTerm == data[i].truckInfo[0].location){
+    if(searchTerm === "All"){
+      addDrivers(appState, data)
+    }
+    else if(searchTerm == data[i].truckInfo[0].location){
+      console.log(data[i], appState)
       appState.availableDrivers.push(data[i]);
     }
+    //addDrivers(appState, data)
+
+  }
+}
+
+function queryLoadByState (data, searchTerm){
+  for(let i in data){
+    //console.log(data[i])
+    if(searchTerm === "All"){
+      addLoad(appState, data)
+    }
+    else if(searchTerm == data[i].load.puLocation){
+      appState.availableLoads.push(data[i]);
+    }
+
 
   }
 }
@@ -50,6 +69,8 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
   
   emptyState();
   const queryState = $('#stateSelector').val();
+
+
   
   if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
@@ -58,7 +79,7 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
     })
     .then(data =>{
 
-        return queryByState(data, queryState)
+        return queryDriverByState(data, queryState)
     })
         .then(function(){
           render(($('div.real-data')));
@@ -68,7 +89,8 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
       return response.json();
     })
         .then(data =>{
-          return addLoad(appState, data);
+         
+          return queryLoadByState(data, queryState)
         })
         .then(function(){
           render(($('div.real-data')));

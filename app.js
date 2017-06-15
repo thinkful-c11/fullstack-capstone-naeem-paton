@@ -38,7 +38,8 @@ function emptyState(state = appState){
 }
 
 function queryDataBase(search, pageURL = "http://localhost:8080/"){
-
+  
+  emptyState();
   if($('#selectorId').val() === 'driver') {
 
     fetch(`http://localhost:8080/drivers`).then(response => {
@@ -76,6 +77,7 @@ function render(element){
   let html = '';
   if(appState.availableDrivers.length > 0) {
     appState.availableDrivers.forEach(driver => {
+      console.log(driver)
         html += `
                     <div class='entry'>
                         <h3><u>${driver.companyName}</u></h3>

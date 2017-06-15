@@ -91,14 +91,7 @@ function postDriver(search, pageURL = 'http://localhost:8080/'){
     body: JSON.stringify(data)
   }).then(response => {
     return response.json();
-  })
-        .then(data =>{
-          console.log(data);
-          queryDataBase();
-        })
-        .then(function(){
-          render(($('div.real-data')));
-        });
+  });
 }
 
 function postBroker(search, pageURL = 'http://localhost:8080/'){
@@ -122,13 +115,7 @@ function postBroker(search, pageURL = 'http://localhost:8080/'){
     body: JSON.stringify(data)
   }).then(response => {
     return response.json();
-  })
-        .then(data =>{
-          queryDataBase();
-        })
-        .then(function(){
-          render(($('div.real-data')));
-        });
+  });
 }
 
 

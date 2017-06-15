@@ -38,16 +38,9 @@ function emptyState(state = appState){
 }
 
 function queryByState (data, searchTerm){
-  console.log("on it", typeof searchTerm);
-  //console.log(typeof data, data)
-  //searchTerm in data[i].truckInfo[0].location
   for(let i in data){
-   //console.log(data[i].truckInfo[0].location);
     if(searchTerm == data[i].truckInfo[0].location){
-      console.log('working')
-      let specificDriver = []
-      specificDriver.push(data[i])
-      addDrivers(appState, specificDriver)
+      appState.availableDrivers.push(data[i]);
     }
 
   }
@@ -57,8 +50,7 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
   
   emptyState();
   const queryState = $('#stateSelector').val();
-  console.log($('#stateSelector'));
-  console.log(queryState);
+  
   if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
     fetch('http://localhost:8080/drivers').then(response => {

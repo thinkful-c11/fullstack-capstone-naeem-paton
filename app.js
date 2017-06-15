@@ -67,7 +67,7 @@ function queryDataBase(search){
 
 
   
-  if($('#selectorId').val() === 'driver' && queryState !== " ") {
+  if($('#selectorId').val() === 'driver') {
 
     fetch('/drivers').then(response => {
       return response.json();

@@ -36,7 +36,7 @@ function generateDriver() {
     truck: [{
         truckNum: faker.lorem.word(),
         trailerNum: faker.lorem.word(),
-        location: faker.address.state(),
+        location: faker.address.stateAbbr(),
         trailerType: faker.lorem.word(),
 
       }],
@@ -65,7 +65,7 @@ function generateBrokerShipper() {
     phone: faker.phone.phoneNumber(),
     load: {
         puLocation: faker.address.stateAbbr(),
-        delLocation: faker.address.state(),
+        delLocation: faker.address.stateAbbr(),
         pudate: faker.date.future(),
         freight: faker.lorem.word()
       },

@@ -1,7 +1,7 @@
 'use strict';
 
 
-//const {DATABASE_URL, PORT} = require('./config');
+const {DATABASE_URL, PORT} = require('./config');
 
 
 
@@ -65,7 +65,7 @@ function queryLoadByState (data, searchTerm){
   }
 }
 
-function queryDataBase(search, pageURL = "http://localhost:8080/"){
+function queryDataBase(search, pageURL = DATABASE_URL){
   
   emptyState();
   const queryState = $('#stateSelector').val();
@@ -74,7 +74,7 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
   
   if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
-    fetch('http://localhost:8080/drivers').then(response => {
+    fetch(`${DATABASE_URL}/drivers`).then(response => {
       return response.json();
     })
     .then(data =>{
@@ -85,7 +85,7 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
           render(($('div.real-data')));
         });
   }else {
-    fetch('http://localhost:8080/brokershippers').then(response => {
+    fetch(`${DATABASE_URL}/brokershippers`).then(response => {
       return response.json();
     })
         .then(data =>{
@@ -98,7 +98,7 @@ function queryDataBase(search, pageURL = "http://localhost:8080/"){
   }
 }
 
-function postDriver(search, pageURL = 'http://localhost:8080/'){
+function postDriver(search, pageURL = DATABASE_URL){
     
   let data = {
     companyName: $('#companyName').val(),
@@ -115,7 +115,7 @@ function postDriver(search, pageURL = 'http://localhost:8080/'){
     }
   };
 
-  fetch('http://localhost:8080/drivers', {
+  fetch(`${DATABASE_URL}/drivers`, {
     method: 'post', 
     headers: { 
       'Accept': 'application/json, text/plain, /', 
@@ -126,7 +126,7 @@ function postDriver(search, pageURL = 'http://localhost:8080/'){
   });
 }
 
-function postBroker(search, pageURL = 'http://localhost:8080/'){
+function postBroker(search, pageURL =  DATABASE_URL){
     
   let data = {
     companyName: $('#brokerName').val(),
@@ -139,7 +139,7 @@ function postBroker(search, pageURL = 'http://localhost:8080/'){
     }
   };
 
-  fetch('http://localhost:8080/brokershippers', {
+  fetch(`${DATABASE_URL}/brokershippers`, {
     method: 'post', 
     headers: { 
       'Accept': 'application/json, text/plain, /', 

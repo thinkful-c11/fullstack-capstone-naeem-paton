@@ -98,6 +98,36 @@ function postDriver(search, pageURL = "http://localhost:8080/"){
         });
 }
 
+function postBroker(search, pageURL = "http://localhost:8080/"){
+    
+    let data = {
+        companyName: $('#brokerName').val(),
+        phone: $('#phone').val(),
+        load: {
+            puLocation: $('#puLocation').val(),
+            delLocation: $('#delLocation').val(),
+            pudate: $('#pudate').val(),
+            freight: $('#freight').val()
+        }
+    };
+
+    fetch(`http://localhost:8080/brokershippers`, {
+        method: 'post', 
+        headers: { 
+            'Accept': 'application/json, text/plain, /', 
+            'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }).then(response => {
+       return response.json()
+     })
+        .then(data =>{
+            queryDataBase();
+        })
+        .then(function(){
+          render(($("div.real-data")));
+        });
+}
+
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -171,6 +201,11 @@ $(function(){
    $('#driver-post').submit(event => {
     event.preventDefault();
 	postDriver();
+  })
+
+  $('#broker-post').submit(event => {
+    event.preventDefault();
+	postBroker();
   })
 
 

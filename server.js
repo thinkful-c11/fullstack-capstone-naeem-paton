@@ -73,7 +73,6 @@ app.get('/brokershippers/:id', (req, res) => {
 });
 
 app.post('/drivers', (req, res) => {
-  console.log(req.body);
   const requiredFields = ['fleetManager', 'truck', 'phoneNum', 'companyName'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -101,6 +100,7 @@ app.post('/drivers', (req, res) => {
 
 
 app.post('/brokershippers', (req, res) => {
+  console.log(req.body);
   const requiredFields = ['companyName', 'phone', 'load'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];

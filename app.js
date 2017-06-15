@@ -37,19 +37,35 @@ function emptyState(state = appState){
     state.availableLoads = [];
 }
 
+function queryByState (data, searchTerm){
+  console.log("on it",searchTerm)
+  //console.log(typeof data, data)
+  //searchTerm in data[i].truckInfo[0].location
+  for(let i in data){
+   console.log(data[i].truckInfo[0].location);
+    if(searchTerm == data[i].truckInfo[0].location){
+      console.log('working')
+      let specificDriver = []
+      specificDriver.push(data[i])
+      addDrivers(appState, specificDriver)
+    }
+
+  }
+}
 
 function queryDataBase(search, pageURL = "http://localhost:8080/"){
   
   emptyState();
-
-  if($('#selectorId').val() === 'driver') {
+  const queryState = $('.state-input').val();
+  if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
     fetch('http://localhost:8080/drivers').then(response => {
       return response.json();
     })
-        .then(data =>{
-          return addDrivers(appState, data);
-        })
+    .then(data =>{
+
+        return queryByState(data, queryState)
+    })
         .then(function(){
           render(($('div.real-data')));
         });
@@ -191,6 +207,7 @@ $(function(){
   $('form.search').submit(event => {
     event.preventDefault();
     queryDataBase();
+    $('.state-input').val("")
   });
 
   $('#driver-post').submit(event => {
@@ -203,5 +220,5 @@ $(function(){
     postBroker();
   });
 
-
+  $('')
 });

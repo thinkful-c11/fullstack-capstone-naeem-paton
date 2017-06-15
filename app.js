@@ -1,10 +1,5 @@
 'use strict';
 
-
-const {DATABASE_URL, PORT} = require('./config');
-
-
-
 //App State
 const appState = {
   search: '',
@@ -65,7 +60,7 @@ function queryLoadByState (data, searchTerm){
   }
 }
 
-function queryDataBase(search, pageURL = DATABASE_URL){
+function queryDataBase(search){
   
   emptyState();
   const queryState = $('#stateSelector').val();
@@ -74,7 +69,7 @@ function queryDataBase(search, pageURL = DATABASE_URL){
   
   if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
-    fetch(`${DATABASE_URL}/drivers`).then(response => {
+    fetch('/drivers').then(response => {
       return response.json();
     })
     .then(data =>{
@@ -85,7 +80,7 @@ function queryDataBase(search, pageURL = DATABASE_URL){
           render(($('div.real-data')));
         });
   }else {
-    fetch(`${DATABASE_URL}/brokershippers`).then(response => {
+    fetch('/brokershippers').then(response => {
       return response.json();
     })
         .then(data =>{
@@ -115,7 +110,7 @@ function postDriver(search, pageURL = DATABASE_URL){
     }
   };
 
-  fetch(`${DATABASE_URL}/drivers`, {
+  fetch(`/drivers`, {
     method: 'post', 
     headers: { 
       'Accept': 'application/json, text/plain, /', 
@@ -139,7 +134,7 @@ function postBroker(search, pageURL =  DATABASE_URL){
     }
   };
 
-  fetch(`${DATABASE_URL}/brokershippers`, {
+  fetch(`/brokershippers`, {
     method: 'post', 
     headers: { 
       'Accept': 'application/json, text/plain, /', 

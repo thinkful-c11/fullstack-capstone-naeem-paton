@@ -14,7 +14,7 @@ const {DATABASE_URL, PORT} = require('./config');
 
 const app = express();
 
-
+app.use(express.static('./'));
 app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(cors());

@@ -9,7 +9,7 @@ const cors = require('cors');
 const {Driver} = require('./models');
 const {BrokerShipper} = require('./models');
 const {DATABASE_URL, PORT} = require('./config');
-const {generateBrokerShipper, generateDriver, seedBrokerShipper, seedDriver} = require('./seedData');
+// const {generateBrokerShipper, generateDriver, seedBrokerShipper, seedDriver} = require('./seedData');
 
 
 const app = express();
@@ -100,6 +100,7 @@ app.post('/drivers', (req, res) => {
 
 
 app.post('/brokershippers', (req, res) => {
+  console.log(req.body);
   const requiredFields = ['companyName', 'phone', 'load'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];

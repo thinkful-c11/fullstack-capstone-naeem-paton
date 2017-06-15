@@ -1,0 +1,17 @@
+  width: 250px;
+  padding: 0 25px 25px 25px;
+  float: left;
+  margin-right: 10px;
+  display: table-cell;
+
+}
+
+.post-box {
+  border: 2px solid black;
+  width: 250px;
+  padding: 0 25px 25px 25px;
+  float: left;
+  margin-right: 10px;
+  display: table-cell;
+
+}

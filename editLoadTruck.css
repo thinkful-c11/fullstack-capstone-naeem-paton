@@ -1,17 +1,53 @@
-  width: 250px;
-  padding: 0 25px 25px 25px;
-  float: left;
-  margin-right: 10px;
-  display: table-cell;
+nav {
+  text-align: center;
+  border: 1px solid black;
+  background-color: red;
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 75px;
+}
 
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+nav a {
+  color: white;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.backgroundPic{
+  background: url("openRoad.jpg") black;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center center;
+  
+}
+
+.post-link {
+  margin-bottom: 5px;
+  position: relative;
+  left: 567px;
 }
 
 .post-box {
+  background-color: white;
   border: 2px solid black;
   width: 250px;
   padding: 0 25px 25px 25px;
-  float: left;
-  margin-right: 10px;
-  display: table-cell;
-
+  text-align: center;
+  margin: auto;
 }

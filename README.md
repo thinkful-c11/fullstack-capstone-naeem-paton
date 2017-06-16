@@ -1,4 +1,4 @@
-                                                           THE BIG TRUCK   
+                                                         THE BIG TRUCK   
 
 This app was created to provide an effective yet functional
 method to help trucking companies find their next load and 

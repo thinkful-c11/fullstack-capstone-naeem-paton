@@ -67,7 +67,7 @@ function queryDataBase(search){
 
 
   
-  if($('#selectorId').val() === 'driver') {
+  if($('#selectorId').val() === 'driver' && queryState !== " ") {
 
     fetch('/drivers').then(response => {
       return response.json();
@@ -158,7 +158,9 @@ function render(element){
   let html = '';
   if(appState.availableDrivers.length > 0) {
     appState.availableDrivers.forEach(driver => {
-
+      console.log(driver);
+      console.log(typeof driver);
+      console.log(typeof driver.truckInfo);
 
       html += `
 

@@ -23,17 +23,17 @@ const driverSchema = mongoose.Schema({
     companyName: {type: String}
 });
 
-driverSchema.virtual('managerFullName').get(function() {
-    return `${this.fleetManager.firstName} ${this.fleetManager.lastName}`.trim();
-});
+// driverSchema.virtual('managerFullName').get(function() {
+//     return `${this.fleetManager.firstName} ${this.fleetManager.lastName}`.trim();
+// });
 
 
 driverSchema.methods.apiRepr = function() {
     return {
         id: this._id,
         companyName: this.companyName,
-        name: this.managerFullName,
-        truckInfo: this.truck,
+        name: this.name,
+        truckInfo: this.truckInfo,
         phone: this.phoneNum || "98990877889",      //CHECK OUT THE HACK, RESEARCH MONGOOSE DROPPING THE undefined 
     };
 };

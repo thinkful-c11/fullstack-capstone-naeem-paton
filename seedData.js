@@ -76,7 +76,7 @@ function seedBrokerShipper() {
   console.info('Seeding test data....');
     
   const seedData = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     seedData.push(generateBrokerShipper());
   }
   return BrokerShipper.insertMany(seedData);

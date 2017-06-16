@@ -60,7 +60,7 @@ deployments to Heroku and CI/CD through Travis CI.
 Host from your local machine:
 
 1. Refer to the Git Hub link posted above and clone/download
-2. $ cd <file location>
+2. $ cd file location
 3. $ npm install
 4. $ npm start
 5. Open index.html in browser

@@ -3,11 +3,8 @@ const faker = require('faker');
 const {Driver, BrokerShipper} = require('./models');
 const {DATABASE_URL} = require('./config');
 const {app, runServer, closeServer} = require('./server');
-const mongoose = require('mongoose');   //SEE IF THIS WORKS WHILE COMMENTED OUT AND FIX BUG IN runServer() not
-//                                        NOT A FUNCTION ERROR LINE 9
+const mongoose = require('mongoose');  
 
-
-//UNCOMMENTING THE FOLLOWING LINES OF CODE WILL BREAK THE APP. BUT IT WORKED FINE EARLIER WTW?
 runServer(DATABASE_URL)
     .then( () => {
   

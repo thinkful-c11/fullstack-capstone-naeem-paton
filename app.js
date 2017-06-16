@@ -93,7 +93,7 @@ function queryDataBase(search){
   }
 }
 
-function postDriver(search, pageURL = DATABASE_URL){
+function postDriver(search){
     
   let data = {
     companyName: $('#companyName').val(),
@@ -121,7 +121,7 @@ function postDriver(search, pageURL = DATABASE_URL){
   });
 }
 
-function postBroker(search, pageURL =  DATABASE_URL){
+function postBroker(search){
     
   let data = {
     companyName: $('#brokerName').val(),

@@ -9,7 +9,6 @@ const cors = require('cors');
 const {Driver} = require('./models');
 const {BrokerShipper} = require('./models');
 const {DATABASE_URL, PORT} = require('./config');
-// const {generateBrokerShipper, generateDriver, seedBrokerShipper, seedDriver} = require('./seedData');
 
 
 const app = express();
@@ -51,7 +50,6 @@ app.get('/drivers/:id', (req, res) => {
 app.get('/brokershippers', (req, res) => {
     BrokerShipper
       .find()
-      //.exec()
       .then(brokerShippers => {
           res.json(brokerShippers.map((brokerShipper) => brokerShipper.apiRepr()));
       })
@@ -193,9 +191,6 @@ app.delete('/brokershippers/:id', (req, res) => {
     });
 });
 
-// app.listen(8080, function() {
-//   console.log('CORS-enabled web server listening on port 8080');
-// });
 
 app.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});

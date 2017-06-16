@@ -1,1402 +1,852 @@
 [
-{
-"id": "5942eae1f1f43a32e4860bd2",
-"companyName": "Kuhlman Group",
-"name": "Christina Kirlin",
-"truckInfo": [
-{
-"trailerType": "quis",
-"location": "FL",
-"trailerNum": "vitae",
-"truckNum": "molestiae"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd3",
-"companyName": "Considine - Parker",
-"name": "Cordia O'Keefe",
-"truckInfo": [
-{
-"trailerType": "veniam",
-"location": "RI",
-"trailerNum": "molestias",
-"truckNum": "iure"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd4",
-"companyName": "Will Group",
-"name": "Jerrell Pfannerstill",
-"truckInfo": [
-{
-"trailerType": "perferendis",
-"location": "NH",
-"trailerNum": "voluptatem",
-"truckNum": "enim"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd5",
-"companyName": "Hamill - Koelpin",
-"name": "Dario Wisozk",
-"truckInfo": [
-{
-"trailerType": "eos",
-"location": "PA",
-"trailerNum": "dolorem",
-"truckNum": "nam"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd6",
-"companyName": "Baumbach, Buckridge and Nitzsche",
-"name": "Linnie Ondricka",
-"truckInfo": [
-{
-"trailerType": "iure",
-"location": "GA",
-"trailerNum": "voluptates",
-"truckNum": "non"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd7",
-"companyName": "Bartell - Weber",
-"name": "Kathleen Quitzon",
-"truckInfo": [
-{
-"trailerType": "tempora",
-"location": "PA",
-"trailerNum": "qui",
-"truckNum": "repudiandae"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd8",
-"companyName": "Ratke LLC",
-"name": "Reina Rolfson",
-"truckInfo": [
-{
-"trailerType": "reprehenderit",
-"location": "IN",
-"trailerNum": "nihil",
-"truckNum": "veritatis"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bd9",
-"companyName": "Hartmann - Davis",
-"name": "Wilhelm Kunze",
-"truckInfo": [
-{
-"trailerType": "ipsum",
-"location": "NY",
-"trailerNum": "temporibus",
-"truckNum": "eum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bda",
-"companyName": "Dooley, Shields and Zboncak",
-"name": "Coty Littel",
-"truckInfo": [
-{
-"trailerType": "omnis",
-"location": "DE",
-"trailerNum": "quas",
-"truckNum": "labore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bdb",
-"companyName": "Ernser, Leuschke and Goyette",
-"name": "Rosalinda Hirthe",
-"truckInfo": [
-{
-"trailerType": "sed",
-"location": "MT",
-"trailerNum": "accusantium",
-"truckNum": "tempore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bdc",
-"companyName": "VonRueden Inc",
-"name": "Tristian Oberbrunner",
-"truckInfo": [
-{
-"trailerType": "voluptatem",
-"location": "ND",
-"trailerNum": "explicabo",
-"truckNum": "hic"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bdd",
-"companyName": "Stroman - Bernier",
-"name": "Sammy Ernser",
-"truckInfo": [
-{
-"trailerType": "omnis",
-"location": "DE",
-"trailerNum": "eligendi",
-"truckNum": "magnam"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bde",
-"companyName": "Braun Inc",
-"name": "Caleb Morar",
-"truckInfo": [
-{
-"trailerType": "a",
-"location": "NM",
-"trailerNum": "laboriosam",
-"truckNum": "tempore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bdf",
-"companyName": "Hammes and Sons",
-"name": "Tracy Ebert",
-"truckInfo": [
-{
-"trailerType": "et",
-"location": "VT",
-"trailerNum": "iusto",
-"truckNum": "natus"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be0",
-"companyName": "Wintheiser - Rau",
-"name": "Norene Walter",
-"truckInfo": [
-{
-"trailerType": "natus",
-"location": "CT",
-"trailerNum": "temporibus",
-"truckNum": "nisi"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be1",
-"companyName": "Fay Inc",
-"name": "Jacey Kulas",
-"truckInfo": [
-{
-"trailerType": "aut",
-"location": "PA",
-"trailerNum": "et",
-"truckNum": "eos"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be2",
-"companyName": "Borer - Howe",
-"name": "Lacy Hand",
-"truckInfo": [
-{
-"trailerType": "eum",
-"location": "SD",
-"trailerNum": "rerum",
-"truckNum": "unde"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be3",
-"companyName": "Ward Inc",
-"name": "Chasity Franecki",
-"truckInfo": [
-{
-"trailerType": "nam",
-"location": "NY",
-"trailerNum": "fugit",
-"truckNum": "eum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be4",
-"companyName": "Mayert - Smith",
-"name": "Sheridan Pagac",
-"truckInfo": [
-{
-"trailerType": "aut",
-"location": "MO",
-"trailerNum": "qui",
-"truckNum": "quas"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be5",
-"companyName": "Mayer - Orn",
-"name": "Rhoda McGlynn",
-"truckInfo": [
-{
-"trailerType": "nihil",
-"location": "IA",
-"trailerNum": "magnam",
-"truckNum": "nostrum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be6",
-"companyName": "Cremin Group",
-"name": "Retta Osinski",
-"truckInfo": [
-{
-"trailerType": "consectetur",
-"location": "WV",
-"trailerNum": "et",
-"truckNum": "beatae"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be7",
-"companyName": "Abbott - Borer",
-"name": "Eldred Littel",
-"truckInfo": [
-{
-"trailerType": "vel",
-"location": "NV",
-"trailerNum": "quaerat",
-"truckNum": "dolore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be8",
-"companyName": "Moore Group",
-"name": "Kirstin Wehner",
-"truckInfo": [
-{
-"trailerType": "suscipit",
-"location": "MO",
-"trailerNum": "iste",
-"truckNum": "aut"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860be9",
-"companyName": "Hills and Sons",
-"name": "Wilford Leannon",
-"truckInfo": [
-{
-"trailerType": "occaecati",
-"location": "DE",
-"trailerNum": "facere",
-"truckNum": "labore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bea",
-"companyName": "Schulist and Sons",
-"name": "Raul Bauch",
-"truckInfo": [
-{
-"trailerType": "sit",
-"location": "OH",
-"trailerNum": "eaque",
-"truckNum": "sit"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860beb",
-"companyName": "Mertz, Waelchi and Douglas",
-"name": "Millie Schinner",
-"truckInfo": [
-{
-"trailerType": "aut",
-"location": "CT",
-"trailerNum": "iure",
-"truckNum": "tenetur"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bec",
-"companyName": "Crist, Ortiz and Bayer",
-"name": "Jarrell Mitchell",
-"truckInfo": [
-{
-"trailerType": "itaque",
-"location": "NV",
-"trailerNum": "explicabo",
-"truckNum": "quas"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bed",
-"companyName": "Rohan LLC",
-"name": "Delphine Morissette",
-"truckInfo": [
-{
-"trailerType": "dignissimos",
-"location": "SC",
-"trailerNum": "et",
-"truckNum": "explicabo"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bee",
-"companyName": "Kunze LLC",
-"name": "Kenneth Moen",
-"truckInfo": [
-{
-"trailerType": "quas",
-"location": "IN",
-"trailerNum": "dicta",
-"truckNum": "iusto"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bef",
-"companyName": "Corkery, Johnson and Blick",
-"name": "Shyann Muller",
-"truckInfo": [
-{
-"trailerType": "in",
-"location": "NM",
-"trailerNum": "ipsum",
-"truckNum": "est"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf0",
-"companyName": "Bradtke Group",
-"name": "Kyra Graham",
-"truckInfo": [
-{
-"trailerType": "maiores",
-"location": "NC",
-"trailerNum": "sapiente",
-"truckNum": "inventore"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf1",
-"companyName": "Flatley Inc",
-"name": "Bobbie Weimann",
-"truckInfo": [
-{
-"trailerType": "ut",
-"location": "ND",
-"trailerNum": "tempore",
-"truckNum": "aperiam"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf2",
-"companyName": "Lebsack, Weissnat and Armstrong",
-"name": "Kenyatta Tremblay",
-"truckInfo": [
-{
-"trailerType": "id",
-"location": "TX",
-"trailerNum": "eveniet",
-"truckNum": "qui"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf3",
-"companyName": "Senger and Sons",
-"name": "Adah Ernser",
-"truckInfo": [
-{
-"trailerType": "animi",
-"location": "NV",
-"trailerNum": "ut",
-"truckNum": "excepturi"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf4",
-"companyName": "Bechtelar Inc",
-"name": "Jazmyn Friesen",
-"truckInfo": [
-{
-"trailerType": "dolorem",
-"location": "MT",
-"trailerNum": "sit",
-"truckNum": "ratione"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf5",
-"companyName": "Auer - Green",
-"name": "Carol Ebert",
-"truckInfo": [
-{
-"trailerType": "aut",
-"location": "ID",
-"trailerNum": "sed",
-"truckNum": "ipsum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf6",
-"companyName": "Schiller, Frami and Kunze",
-"name": "Geovanny Labadie",
-"truckInfo": [
-{
-"trailerType": "id",
-"location": "OK",
-"trailerNum": "ut",
-"truckNum": "vitae"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf7",
-"companyName": "Mayer and Sons",
-"name": "Albina Lueilwitz",
-"truckInfo": [
-{
-"trailerType": "provident",
-"location": "TX",
-"trailerNum": "commodi",
-"truckNum": "et"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf8",
-"companyName": "Bednar, Kulas and Koelpin",
-"name": "Krystal Torp",
-"truckInfo": [
-{
-"trailerType": "nisi",
-"location": "AK",
-"trailerNum": "est",
-"truckNum": "hic"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bf9",
-"companyName": "Raynor - Kuphal",
-"name": "Stephanie Berge",
-"truckInfo": [
-{
-"trailerType": "et",
-"location": "AL",
-"trailerNum": "molestiae",
-"truckNum": "voluptates"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bfa",
-"companyName": "Wisozk - Kautzer",
-"name": "Franz Herman",
-"truckInfo": [
-{
-"trailerType": "eius",
-"location": "WI",
-"trailerNum": "cupiditate",
-"truckNum": "voluptatem"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bfb",
-"companyName": "Monahan, Grimes and Gleason",
-"name": "Colten Parker",
-"truckInfo": [
-{
-"trailerType": "ipsam",
-"location": "OH",
-"trailerNum": "assumenda",
-"truckNum": "deserunt"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bfc",
-"companyName": "Waters - Donnelly",
-"name": "Marion Hettinger",
-"truckInfo": [
-{
-"trailerType": "earum",
-"location": "MO",
-"trailerNum": "earum",
-"truckNum": "eum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bfd",
-"companyName": "Goyette, Pacocha and Bradtke",
-"name": "Elmer Lebsack",
-"truckInfo": [
-{
-"trailerType": "autem",
-"location": "WY",
-"trailerNum": "maxime",
-"truckNum": "commodi"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bfe",
-"companyName": "Koelpin Inc",
-"name": "King Stanton",
-"truckInfo": [
-{
-"trailerType": "eligendi",
-"location": "OH",
-"trailerNum": "dolorem",
-"truckNum": "aperiam"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860bff",
-"companyName": "Raynor Inc",
-"name": "Mikel Wiza",
-"truckInfo": [
-{
-"trailerType": "dolor",
-"location": "FL",
-"trailerNum": "rem",
-"truckNum": "quidem"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c00",
-"companyName": "Schneider, McGlynn and Harris",
-"name": "Harvey Skiles",
-"truckInfo": [
-{
-"trailerType": "autem",
-"location": "TX",
-"trailerNum": "maxime",
-"truckNum": "culpa"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c01",
-"companyName": "Hansen, Boyle and Bayer",
-"name": "Mavis Smitham",
-"truckInfo": [
-{
-"trailerType": "et",
-"location": "IL",
-"trailerNum": "esse",
-"truckNum": "minima"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c02",
-"companyName": "Torp and Sons",
-"name": "Patrick Johnston",
-"truckInfo": [
-{
-"trailerType": "deserunt",
-"location": "NH",
-"trailerNum": "harum",
-"truckNum": "aut"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c03",
-"companyName": "Hickle, Upton and Koepp",
-"name": "Maude Champlin",
-"truckInfo": [
-{
-"trailerType": "excepturi",
-"location": "WY",
-"trailerNum": "libero",
-"truckNum": "et"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c04",
-"companyName": "Wolff, Johnson and Schneider",
-"name": "Monserrat Stanton",
-"truckInfo": [
-{
-"trailerType": "natus",
-"location": "GA",
-"trailerNum": "alias",
-"truckNum": "sint"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c05",
-"companyName": "Flatley - Kihn",
-"name": "Payton Ankunding",
-"truckInfo": [
-{
-"trailerType": "quae",
-"location": "RI",
-"trailerNum": "voluptate",
-"truckNum": "error"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c06",
-"companyName": "Rempel, Corkery and Bechtelar",
-"name": "Rylee Kassulke",
-"truckInfo": [
-{
-"trailerType": "accusantium",
-"location": "OK",
-"trailerNum": "sint",
-"truckNum": "minus"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c07",
-"companyName": "Morissette LLC",
-"name": "Olaf Zemlak",
-"truckInfo": [
-{
-"trailerType": "facere",
-"location": "MI",
-"trailerNum": "labore",
-"truckNum": "distinctio"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c08",
-"companyName": "Mills LLC",
-"name": "Cary Schaden",
-"truckInfo": [
-{
-"trailerType": "ipsam",
-"location": "VA",
-"trailerNum": "mollitia",
-"truckNum": "sed"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c09",
-"companyName": "Kreiger - Mitchell",
-"name": "Ellen Hirthe",
-"truckInfo": [
-{
-"trailerType": "earum",
-"location": "WA",
-"trailerNum": "et",
-"truckNum": "minus"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0a",
-"companyName": "Buckridge, Yost and Koelpin",
-"name": "Marianne Wyman",
-"truckInfo": [
-{
-"trailerType": "cupiditate",
-"location": "RI",
-"trailerNum": "libero",
-"truckNum": "voluptatem"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0b",
-"companyName": "Macejkovic Inc",
-"name": "Hosea Hartmann",
-"truckInfo": [
-{
-"trailerType": "qui",
-"location": "KY",
-"trailerNum": "placeat",
-"truckNum": "ipsa"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0c",
-"companyName": "O'Keefe, Gleichner and Weimann",
-"name": "Erna Ziemann",
-"truckInfo": [
-{
-"trailerType": "voluptas",
-"location": "PA",
-"trailerNum": "placeat",
-"truckNum": "eveniet"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0d",
-"companyName": "Bednar, Welch and Satterfield",
-"name": "Kylie Koelpin",
-"truckInfo": [
-{
-"trailerType": "soluta",
-"location": "AZ",
-"trailerNum": "voluptas",
-"truckNum": "non"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0e",
-"companyName": "Donnelly and Sons",
-"name": "Santa Christiansen",
-"truckInfo": [
-{
-"trailerType": "ullam",
-"location": "OH",
-"trailerNum": "voluptatem",
-"truckNum": "voluptate"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c0f",
-"companyName": "Witting Group",
-"name": "Raphaelle Anderson",
-"truckInfo": [
-{
-"trailerType": "impedit",
-"location": "FL",
-"trailerNum": "earum",
-"truckNum": "aut"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c10",
-"companyName": "Padberg Group",
-"name": "Florencio Wiegand",
-"truckInfo": [
-{
-"trailerType": "cumque",
-"location": "IL",
-"trailerNum": "voluptatum",
-"truckNum": "a"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c11",
-"companyName": "Mayer, Roob and Lang",
-"name": "Omari McLaughlin",
-"truckInfo": [
-{
-"trailerType": "modi",
-"location": "SC",
-"trailerNum": "cupiditate",
-"truckNum": "consequatur"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c12",
-"companyName": "Sawayn - Fahey",
-"name": "Marisol Marvin",
-"truckInfo": [
-{
-"trailerType": "quae",
-"location": "KS",
-"trailerNum": "et",
-"truckNum": "hic"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c13",
-"companyName": "Pagac, Moore and Huels",
-"name": "Ines Ebert",
-"truckInfo": [
-{
-"trailerType": "eligendi",
-"location": "IN",
-"trailerNum": "dolorem",
-"truckNum": "porro"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c14",
-"companyName": "Hauck Inc",
-"name": "Baylee Schuppe",
-"truckInfo": [
-{
-"trailerType": "vero",
-"location": "ND",
-"trailerNum": "quam",
-"truckNum": "nihil"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c15",
-"companyName": "Boehm, Treutel and Marks",
-"name": "Annamarie Kshlerin",
-"truckInfo": [
-{
-"trailerType": "deleniti",
-"location": "NJ",
-"trailerNum": "vitae",
-"truckNum": "est"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c16",
-"companyName": "Volkman - Williamson",
-"name": "Taurean Kassulke",
-"truckInfo": [
-{
-"trailerType": "qui",
-"location": "DE",
-"trailerNum": "libero",
-"truckNum": "repellat"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c17",
-"companyName": "Hartmann - Cruickshank",
-"name": "Lexie Auer",
-"truckInfo": [
-{
-"trailerType": "nesciunt",
-"location": "IL",
-"trailerNum": "earum",
-"truckNum": "impedit"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c18",
-"companyName": "Connelly - Hayes",
-"name": "Amari Balistreri",
-"truckInfo": [
-{
-"trailerType": "praesentium",
-"location": "VA",
-"trailerNum": "magni",
-"truckNum": "aut"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c19",
-"companyName": "Kerluke - Turcotte",
-"name": "Liliane Gottlieb",
-"truckInfo": [
-{
-"trailerType": "ut",
-"location": "FL",
-"trailerNum": "ea",
-"truckNum": "perferendis"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1a",
-"companyName": "Schroeder - Bayer",
-"name": "Shana Bayer",
-"truckInfo": [
-{
-"trailerType": "voluptas",
-"location": "TN",
-"trailerNum": "et",
-"truckNum": "voluptatem"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1b",
-"companyName": "Stamm, Shields and Lang",
-"name": "Aisha Steuber",
-"truckInfo": [
-{
-"trailerType": "ex",
-"location": "NH",
-"trailerNum": "consequatur",
-"truckNum": "et"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1c",
-"companyName": "Roob, Hudson and Hayes",
-"name": "Grace Rice",
-"truckInfo": [
-{
-"trailerType": "ullam",
-"location": "AZ",
-"trailerNum": "dolor",
-"truckNum": "molestias"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1d",
-"companyName": "Zieme, Grady and Schmeler",
-"name": "Pearl O'Connell",
-"truckInfo": [
-{
-"trailerType": "quidem",
-"location": "AZ",
-"trailerNum": "veritatis",
-"truckNum": "sapiente"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1e",
-"companyName": "Mraz - Hills",
-"name": "Mckenna Reinger",
-"truckInfo": [
-{
-"trailerType": "consequatur",
-"location": "WY",
-"trailerNum": "in",
-"truckNum": "odit"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c1f",
-"companyName": "Lindgren - Lindgren",
-"name": "Tristian Kulas",
-"truckInfo": [
-{
-"trailerType": "pariatur",
-"location": "GA",
-"trailerNum": "recusandae",
-"truckNum": "aspernatur"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c20",
-"companyName": "Berge and Sons",
-"name": "Lora Johnston",
-"truckInfo": [
-{
-"trailerType": "quae",
-"location": "OK",
-"trailerNum": "aliquid",
-"truckNum": "dicta"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c21",
-"companyName": "Halvorson Inc",
-"name": "Alex Gleason",
-"truckInfo": [
-{
-"trailerType": "reprehenderit",
-"location": "IA",
-"trailerNum": "repudiandae",
-"truckNum": "facere"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c22",
-"companyName": "Jacobs, Pfeffer and Roberts",
-"name": "Waylon Lindgren",
-"truckInfo": [
-{
-"trailerType": "qui",
-"location": "SD",
-"trailerNum": "deserunt",
-"truckNum": "assumenda"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c23",
-"companyName": "Kertzmann Inc",
-"name": "Davon Mann",
-"truckInfo": [
-{
-"trailerType": "libero",
-"location": "IA",
-"trailerNum": "dignissimos",
-"truckNum": "perferendis"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c24",
-"companyName": "Monahan - Haag",
-"name": "Hilbert Dickens",
-"truckInfo": [
-{
-"trailerType": "id",
-"location": "HI",
-"trailerNum": "eius",
-"truckNum": "cumque"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c25",
-"companyName": "Prohaska - Gleichner",
-"name": "Madyson Schamberger",
-"truckInfo": [
-{
-"trailerType": "accusamus",
-"location": "VA",
-"trailerNum": "repellat",
-"truckNum": "et"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c26",
-"companyName": "Kirlin, Schamberger and Reichel",
-"name": "Josefina Reichel",
-"truckInfo": [
-{
-"trailerType": "tenetur",
-"location": "MN",
-"trailerNum": "dolorem",
-"truckNum": "voluptate"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c27",
-"companyName": "Schulist Inc",
-"name": "Lester Dicki",
-"truckInfo": [
-{
-"trailerType": "expedita",
-"location": "UT",
-"trailerNum": "aut",
-"truckNum": "quia"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c28",
-"companyName": "Dibbert, Nicolas and Robel",
-"name": "Florencio Kris",
-"truckInfo": [
-{
-"trailerType": "qui",
-"location": "MA",
-"trailerNum": "aut",
-"truckNum": "rerum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c29",
-"companyName": "Wuckert Group",
-"name": "Fae Anderson",
-"truckInfo": [
-{
-"trailerType": "voluptatem",
-"location": "OR",
-"trailerNum": "sunt",
-"truckNum": "earum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2a",
-"companyName": "Reinger, Farrell and Gibson",
-"name": "Arden Johns",
-"truckInfo": [
-{
-"trailerType": "ea",
-"location": "KS",
-"trailerNum": "velit",
-"truckNum": "sed"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2b",
-"companyName": "Spinka - Weimann",
-"name": "Ethyl Mayer",
-"truckInfo": [
-{
-"trailerType": "neque",
-"location": "CT",
-"trailerNum": "cupiditate",
-"truckNum": "et"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2c",
-"companyName": "Gleason - Kiehn",
-"name": "Tatum Terry",
-"truckInfo": [
-{
-"trailerType": "ullam",
-"location": "CO",
-"trailerNum": "ad",
-"truckNum": "reprehenderit"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2d",
-"companyName": "Schmeler and Sons",
-"name": "Mariela Farrell",
-"truckInfo": [
-{
-"trailerType": "adipisci",
-"location": "WA",
-"trailerNum": "officia",
-"truckNum": "nihil"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2e",
-"companyName": "Collins, Krajcik and Leffler",
-"name": "Merlin Little",
-"truckInfo": [
-{
-"trailerType": "omnis",
-"location": "ID",
-"trailerNum": "consectetur",
-"truckNum": "praesentium"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c2f",
-"companyName": "Welch, Hegmann and Hackett",
-"name": "Newell Predovic",
-"truckInfo": [
-{
-"trailerType": "dolore",
-"location": "DE",
-"trailerNum": "consequatur",
-"truckNum": "quam"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c30",
-"companyName": "Ebert, Abbott and Homenick",
-"name": "Danielle Shanahan",
-"truckInfo": [
-{
-"trailerType": "consequatur",
-"location": "MI",
-"trailerNum": "ea",
-"truckNum": "magni"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c31",
-"companyName": "Brown, Orn and Cummings",
-"name": "Theresia Shanahan",
-"truckInfo": [
-{
-"trailerType": "officia",
-"location": "NE",
-"trailerNum": "numquam",
-"truckNum": "laudantium"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c32",
-"companyName": "Cruickshank - Lakin",
-"name": "Brando Kulas",
-"truckInfo": [
-{
-"trailerType": "quis",
-"location": "MD",
-"trailerNum": "velit",
-"truckNum": "dicta"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c33",
-"companyName": "Russel and Sons",
-"name": "Gordon Kub",
-"truckInfo": [
-{
-"trailerType": "cum",
-"location": "MA",
-"trailerNum": "qui",
-"truckNum": "rerum"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c34",
-"companyName": "Schaden LLC",
-"name": "Nona Abbott",
-"truckInfo": [
-{
-"trailerType": "non",
-"location": "AR",
-"trailerNum": "dignissimos",
-"truckNum": "ut"
-}
-],
-"phone": "98990877889"
-},
-{
-"id": "5942eae1f1f43a32e4860c35",
-"companyName": "Frami - Kub",
-"name": "Vena Olson",
-"truckInfo": [
-{
-"trailerType": "dolores",
-"location": "OH",
-"trailerNum": "sit",
-"truckNum": "placeat"
-}
-],
-"phone": "98990877889"
-}
+  {
+    "_id": "5942da55907b3a1af0eddfdf",
+    "__v": 0,
+    "companyName": "Streich LLC",
+    "fleetManager": {
+      "firstName": "Helene",
+      "lastName": "Lang"
+    },
+    "truck": [
+      {
+        "trailerType": "recusandae",
+        "location": "CA",
+        "trailerNum": "sunt",
+        "truckNum": "dolorem"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfaf",
+    "__v": 0,
+    "companyName": "Jones Inc",
+    "fleetManager": {
+      "firstName": "Novella",
+      "lastName": "Ratke"
+    },
+    "truck": [
+      {
+        "trailerType": "eum",
+        "location": "WV",
+        "trailerNum": "illo",
+        "truckNum": "tempora"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb0",
+    "__v": 0,
+    "companyName": "Smitham, Zulauf and Huels",
+    "fleetManager": {
+      "firstName": "Amina",
+      "lastName": "Kerluke"
+    },
+    "truck": [
+      {
+        "trailerType": "dolor",
+        "location": "DE",
+        "trailerNum": "porro",
+        "truckNum": "voluptatem"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb1",
+    "__v": 0,
+    "companyName": "Hickle LLC",
+    "fleetManager": {
+      "firstName": "Katharina",
+      "lastName": "Hoppe"
+    },
+    "truck": [
+      {
+        "trailerType": "aliquid",
+        "location": "ME",
+        "trailerNum": "deleniti",
+        "truckNum": "aut"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb2",
+    "__v": 0,
+    "companyName": "White Inc",
+    "fleetManager": {
+      "firstName": "Humberto",
+      "lastName": "Konopelski"
+    },
+    "truck": [
+      {
+        "trailerType": "ullam",
+        "location": "ID",
+        "trailerNum": "sed",
+        "truckNum": "ea"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb3",
+    "__v": 0,
+    "companyName": "Schuster - Kuhic",
+    "fleetManager": {
+      "firstName": "Marge",
+      "lastName": "Bernhard"
+    },
+    "truck": [
+      {
+        "trailerType": "nulla",
+        "location": "PA",
+        "trailerNum": "corporis",
+        "truckNum": "ea"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb4",
+    "__v": 0,
+    "companyName": "D'Amore and Sons",
+    "fleetManager": {
+      "firstName": "Gladys",
+      "lastName": "Rutherford"
+    },
+    "truck": [
+      {
+        "trailerType": "libero",
+        "location": "MO",
+        "trailerNum": "omnis",
+        "truckNum": "sit"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb5",
+    "__v": 0,
+    "companyName": "Lindgren Group",
+    "fleetManager": {
+      "firstName": "Kayden",
+      "lastName": "Adams"
+    },
+    "truck": [
+      {
+        "trailerType": "sit",
+        "location": "OR",
+        "trailerNum": "nisi",
+        "truckNum": "numquam"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb6",
+    "__v": 0,
+    "companyName": "Lockman - White",
+    "fleetManager": {
+      "firstName": "Verla",
+      "lastName": "Hermiston"
+    },
+    "truck": [
+      {
+        "trailerType": "dolorum",
+        "location": "CO",
+        "trailerNum": "omnis",
+        "truckNum": "ut"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb7",
+    "__v": 0,
+    "companyName": "Miller, Boehm and Cremin",
+    "fleetManager": {
+      "firstName": "Immanuel",
+      "lastName": "Collins"
+    },
+    "truck": [
+      {
+        "trailerType": "totam",
+        "location": "ME",
+        "trailerNum": "aliquam",
+        "truckNum": "officiis"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb8",
+    "__v": 0,
+    "companyName": "Raynor Inc",
+    "fleetManager": {
+      "firstName": "Garth",
+      "lastName": "Armstrong"
+    },
+    "truck": [
+      {
+        "trailerType": "sit",
+        "location": "RI",
+        "trailerNum": "ipsam",
+        "truckNum": "voluptatem"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfb9",
+    "__v": 0,
+    "companyName": "Boyle - Shanahan",
+    "fleetManager": {
+      "firstName": "Margot",
+      "lastName": "Weissnat"
+    },
+    "truck": [
+      {
+        "trailerType": "aperiam",
+        "location": "NM",
+        "trailerNum": "qui",
+        "truckNum": "ducimus"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfba",
+    "__v": 0,
+    "companyName": "Cole - Pouros",
+    "fleetManager": {
+      "firstName": "Felicity",
+      "lastName": "Schroeder"
+    },
+    "truck": [
+      {
+        "trailerType": "id",
+        "location": "OH",
+        "trailerNum": "quasi",
+        "truckNum": "non"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfbb",
+    "__v": 0,
+    "companyName": "Predovic - Brakus",
+    "fleetManager": {
+      "firstName": "Fletcher",
+      "lastName": "Deckow"
+    },
+    "truck": [
+      {
+        "trailerType": "fugit",
+        "location": "SD",
+        "trailerNum": "beatae",
+        "truckNum": "sapiente"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfbc",
+    "__v": 0,
+    "companyName": "Oberbrunner Group",
+    "fleetManager": {
+      "firstName": "Jettie",
+      "lastName": "Keebler"
+    },
+    "truck": [
+      {
+        "trailerType": "libero",
+        "location": "VA",
+        "trailerNum": "quis",
+        "truckNum": "perspiciatis"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfbd",
+    "__v": 0,
+    "companyName": "Monahan, Larson and Maggio",
+    "fleetManager": {
+      "firstName": "Ellie",
+      "lastName": "Smith"
+    },
+    "truck": [
+      {
+        "trailerType": "reiciendis",
+        "location": "FL",
+        "trailerNum": "voluptas",
+        "truckNum": "temporibus"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfbe",
+    "__v": 0,
+    "companyName": "Mitchell, Turner and Nolan",
+    "fleetManager": {
+      "firstName": "Samir",
+      "lastName": "Klocko"
+    },
+    "truck": [
+      {
+        "trailerType": "omnis",
+        "location": "WY",
+        "trailerNum": "enim",
+        "truckNum": "quasi"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfbf",
+    "__v": 0,
+    "companyName": "Altenwerth, Sawayn and Goldner",
+    "fleetManager": {
+      "firstName": "Samir",
+      "lastName": "Moen"
+    },
+    "truck": [
+      {
+        "trailerType": "tempore",
+        "location": "NC",
+        "trailerNum": "necessitatibus",
+        "truckNum": "suscipit"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc0",
+    "__v": 0,
+    "companyName": "Cremin - Ledner",
+    "fleetManager": {
+      "firstName": "Brianne",
+      "lastName": "Rohan"
+    },
+    "truck": [
+      {
+        "trailerType": "error",
+        "location": "CT",
+        "trailerNum": "voluptatem",
+        "truckNum": "temporibus"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc1",
+    "__v": 0,
+    "companyName": "Douglas, Roob and Heathcote",
+    "fleetManager": {
+      "firstName": "Kelsi",
+      "lastName": "Schamberger"
+    },
+    "truck": [
+      {
+        "trailerType": "explicabo",
+        "location": "KS",
+        "trailerNum": "est",
+        "truckNum": "voluptate"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc2",
+    "__v": 0,
+    "companyName": "Mann, McCullough and Dickens",
+    "fleetManager": {
+      "firstName": "Lyda",
+      "lastName": "Hayes"
+    },
+    "truck": [
+      {
+        "trailerType": "impedit",
+        "location": "KS",
+        "trailerNum": "qui",
+        "truckNum": "quo"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc3",
+    "__v": 0,
+    "companyName": "Langosh - Schoen",
+    "fleetManager": {
+      "firstName": "Haylie",
+      "lastName": "Hessel"
+    },
+    "truck": [
+      {
+        "trailerType": "enim",
+        "location": "AR",
+        "trailerNum": "culpa",
+        "truckNum": "iure"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc4",
+    "__v": 0,
+    "companyName": "Brekke - Donnelly",
+    "fleetManager": {
+      "firstName": "Howell",
+      "lastName": "Goodwin"
+    },
+    "truck": [
+      {
+        "trailerType": "repellat",
+        "location": "ME",
+        "trailerNum": "laboriosam",
+        "truckNum": "harum"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc5",
+    "__v": 0,
+    "companyName": "McLaughlin LLC",
+    "fleetManager": {
+      "firstName": "Adele",
+      "lastName": "Sanford"
+    },
+    "truck": [
+      {
+        "trailerType": "nulla",
+        "location": "KS",
+        "trailerNum": "perspiciatis",
+        "truckNum": "recusandae"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc6",
+    "__v": 0,
+    "companyName": "Leannon Group",
+    "fleetManager": {
+      "firstName": "Franz",
+      "lastName": "Zemlak"
+    },
+    "truck": [
+      {
+        "trailerType": "numquam",
+        "location": "MI",
+        "trailerNum": "ducimus",
+        "truckNum": "fugit"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc7",
+    "__v": 0,
+    "companyName": "Weber and Sons",
+    "fleetManager": {
+      "firstName": "Rory",
+      "lastName": "Dietrich"
+    },
+    "truck": [
+      {
+        "trailerType": "magnam",
+        "location": "AR",
+        "trailerNum": "perspiciatis",
+        "truckNum": "voluptas"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc8",
+    "__v": 0,
+    "companyName": "Lemke Inc",
+    "fleetManager": {
+      "firstName": "Deanna",
+      "lastName": "Dare"
+    },
+    "truck": [
+      {
+        "trailerType": "architecto",
+        "location": "VA",
+        "trailerNum": "ut",
+        "truckNum": "error"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfc9",
+    "__v": 0,
+    "companyName": "Gutkowski - Kub",
+    "fleetManager": {
+      "firstName": "Eddie",
+      "lastName": "Swift"
+    },
+    "truck": [
+      {
+        "trailerType": "ratione",
+        "location": "NJ",
+        "trailerNum": "et",
+        "truckNum": "reprehenderit"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfca",
+    "__v": 0,
+    "companyName": "Murray - Pollich",
+    "fleetManager": {
+      "firstName": "Micaela",
+      "lastName": "Wyman"
+    },
+    "truck": [
+      {
+        "trailerType": "beatae",
+        "location": "NM",
+        "trailerNum": "officia",
+        "truckNum": "nemo"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfcb",
+    "__v": 0,
+    "companyName": "Wolf LLC",
+    "fleetManager": {
+      "firstName": "Stephania",
+      "lastName": "Okuneva"
+    },
+    "truck": [
+      {
+        "trailerType": "accusamus",
+        "location": "AR",
+        "trailerNum": "ducimus",
+        "truckNum": "aut"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfcc",
+    "__v": 0,
+    "companyName": "Adams, Abbott and Grant",
+    "fleetManager": {
+      "firstName": "Hailey",
+      "lastName": "Willms"
+    },
+    "truck": [
+      {
+        "trailerType": "voluptates",
+        "location": "ME",
+        "trailerNum": "voluptates",
+        "truckNum": "ex"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfcd",
+    "__v": 0,
+    "companyName": "Walsh Inc",
+    "fleetManager": {
+      "firstName": "Harrison",
+      "lastName": "Marvin"
+    },
+    "truck": [
+      {
+        "trailerType": "ut",
+        "location": "IN",
+        "trailerNum": "placeat",
+        "truckNum": "qui"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfce",
+    "__v": 0,
+    "companyName": "Ullrich - Carroll",
+    "fleetManager": {
+      "firstName": "Treva",
+      "lastName": "Boyer"
+    },
+    "truck": [
+      {
+        "trailerType": "iure",
+        "location": "LA",
+        "trailerNum": "esse",
+        "truckNum": "illum"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfcf",
+    "__v": 0,
+    "companyName": "Jacobson, Pacocha and Christiansen",
+    "fleetManager": {
+      "firstName": "Rozella",
+      "lastName": "Jenkins"
+    },
+    "truck": [
+      {
+        "trailerType": "veniam",
+        "location": "KS",
+        "trailerNum": "est",
+        "truckNum": "consequatur"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd0",
+    "__v": 0,
+    "companyName": "Grant - Carroll",
+    "fleetManager": {
+      "firstName": "Carlee",
+      "lastName": "Wunsch"
+    },
+    "truck": [
+      {
+        "trailerType": "qui",
+        "location": "IN",
+        "trailerNum": "repellendus",
+        "truckNum": "fugit"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd1",
+    "__v": 0,
+    "companyName": "Nikolaus, Steuber and Lemke",
+    "fleetManager": {
+      "firstName": "Leslie",
+      "lastName": "Hermiston"
+    },
+    "truck": [
+      {
+        "trailerType": "explicabo",
+        "location": "NH",
+        "trailerNum": "aut",
+        "truckNum": "sint"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd2",
+    "__v": 0,
+    "companyName": "Rau, Stark and Trantow",
+    "fleetManager": {
+      "firstName": "Lorine",
+      "lastName": "Lemke"
+    },
+    "truck": [
+      {
+        "trailerType": "sapiente",
+        "location": "NE",
+        "trailerNum": "quia",
+        "truckNum": "sed"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd3",
+    "__v": 0,
+    "companyName": "Stiedemann, Wolff and Swift",
+    "fleetManager": {
+      "firstName": "Whitney",
+      "lastName": "Bins"
+    },
+    "truck": [
+      {
+        "trailerType": "dolores",
+        "location": "WI",
+        "trailerNum": "qui",
+        "truckNum": "omnis"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd4",
+    "__v": 0,
+    "companyName": "Stokes - Grimes",
+    "fleetManager": {
+      "firstName": "Vita",
+      "lastName": "Jacobs"
+    },
+    "truck": [
+      {
+        "trailerType": "et",
+        "location": "DE",
+        "trailerNum": "et",
+        "truckNum": "quaerat"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd5",
+    "__v": 0,
+    "companyName": "Runolfsson, Hackett and Cremin",
+    "fleetManager": {
+      "firstName": "Barbara",
+      "lastName": "Wilkinson"
+    },
+    "truck": [
+      {
+        "trailerType": "qui",
+        "location": "VA",
+        "trailerNum": "debitis",
+        "truckNum": "quia"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd6",
+    "__v": 0,
+    "companyName": "Leuschke, Haag and Conroy",
+    "fleetManager": {
+      "firstName": "Joyce",
+      "lastName": "Veum"
+    },
+    "truck": [
+      {
+        "trailerType": "eum",
+        "location": "UT",
+        "trailerNum": "quibusdam",
+        "truckNum": "error"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd7",
+    "__v": 0,
+    "companyName": "West, Bartell and Bruen",
+    "fleetManager": {
+      "firstName": "Elinore",
+      "lastName": "Leffler"
+    },
+    "truck": [
+      {
+        "trailerType": "reprehenderit",
+        "location": "RI",
+        "trailerNum": "at",
+        "truckNum": "ratione"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd8",
+    "__v": 0,
+    "companyName": "Reilly - Hyatt",
+    "fleetManager": {
+      "firstName": "Henri",
+      "lastName": "Cummerata"
+    },
+    "truck": [
+      {
+        "trailerType": "enim",
+        "location": "FL",
+        "trailerNum": "sunt",
+        "truckNum": "provident"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfd9",
+    "__v": 0,
+    "companyName": "Olson - Beer",
+    "fleetManager": {
+      "firstName": "Domenica",
+      "lastName": "Zboncak"
+    },
+    "truck": [
+      {
+        "trailerType": "esse",
+        "location": "VT",
+        "trailerNum": "illo",
+        "truckNum": "nemo"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfda",
+    "__v": 0,
+    "companyName": "Becker, Stroman and Mertz",
+    "fleetManager": {
+      "firstName": "Ashlee",
+      "lastName": "Corwin"
+    },
+    "truck": [
+      {
+        "trailerType": "id",
+        "location": "ME",
+        "trailerNum": "quos",
+        "truckNum": "a"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfdb",
+    "__v": 0,
+    "companyName": "Skiles, Hettinger and Baumbach",
+    "fleetManager": {
+      "firstName": "Taylor",
+      "lastName": "Olson"
+    },
+    "truck": [
+      {
+        "trailerType": "quasi",
+        "location": "MO",
+        "trailerNum": "culpa",
+        "truckNum": "quod"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfdc",
+    "__v": 0,
+    "companyName": "Gleason Inc",
+    "fleetManager": {
+      "firstName": "Pierce",
+      "lastName": "Lueilwitz"
+    },
+    "truck": [
+      {
+        "trailerType": "quibusdam",
+        "location": "AZ",
+        "trailerNum": "magni",
+        "truckNum": "non"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfdd",
+    "__v": 0,
+    "companyName": "Stehr - Wisoky",
+    "fleetManager": {
+      "firstName": "Frederic",
+      "lastName": "Walter"
+    },
+    "truck": [
+      {
+        "trailerType": "libero",
+        "location": "ND",
+        "trailerNum": "aperiam",
+        "truckNum": "dolores"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfde",
+    "__v": 0,
+    "companyName": "Abernathy, Monahan and Toy",
+    "fleetManager": {
+      "firstName": "Stefanie",
+      "lastName": "Gutmann"
+    },
+    "truck": [
+      {
+        "trailerType": "at",
+        "location": "OR",
+        "trailerNum": "facilis",
+        "truckNum": "laborum"
+      }
+    ]
+  },
+  {
+    "_id": "5942da55907b3a1af0eddfdf",
+    "__v": 0,
+    "companyName": "Streich LLC",
+    "fleetManager": {
+      "firstName": "Helene",
+      "lastName": "Lang"
+    },
+    "truck": [
+      {
+        "trailerType": "recusandae",
+        "location": "CA",
+        "trailerNum": "sunt",
+        "truckNum": "dolorem"
+      }
+    ]
+  }
 ]

@@ -82,4 +82,3 @@ in the future:
 
 4. Integration of Weather (to provide driver live weather updates along their route)
 
-4. 

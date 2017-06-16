@@ -1,8 +1,7 @@
 'use strict';
 
 const appState = {
-  search: '',
-  availableDrivers: [],
+   availableDrivers: [],
   availableLoads: []
 };
 
@@ -19,10 +18,6 @@ function addDrivers(state, response) {
 
 function addLoad(state, response) {
   state.availableLoads = response;
-}
-
-function addSearch(state, response) {
-  state.search = response;
 }
 
 function emptyState(state = appState){
@@ -61,7 +56,6 @@ function queryDataBase(search){
   
   emptyState();
   const queryState = $('#stateSelector').val();
-
 
   
   if($('#selectorId').val() === 'driver' && queryState !== " ") {
@@ -157,9 +151,6 @@ function render(element){
   let html = '';
   if(appState.availableDrivers.length > 0) {
     appState.availableDrivers.forEach(driver => {
-      console.log(driver);
-      console.log(typeof driver);
-      console.log(typeof driver.truckInfo);
 
       html += `
 
@@ -200,10 +191,6 @@ function render(element){
 }
 
 
-
-function renderSearch(element){
-
-}
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////

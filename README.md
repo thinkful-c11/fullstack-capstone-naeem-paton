@@ -68,4 +68,18 @@ Host from your local machine:
 5. Open index.html in browser
 6. Try it out!
 
+In the future:
 
+Here are some of the features that should be added to The Big Truck
+in the future:
+
+1. Authentication
+
+2. Advanced create operations (add multiple trucks to fleet/multiple 
+   loads to a broker/shipper)
+
+3. Integration of Google.maps API (update location, give estimated trip time)
+
+4. Integration of Weather (to provide driver live weather updates along their route)
+
+4. 

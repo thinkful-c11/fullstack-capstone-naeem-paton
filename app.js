@@ -3,7 +3,7 @@
 const appState = {
    availableDrivers: [],
   availableLoads: []
-};
+}
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -21,7 +21,6 @@ function addLoad(state, response) {
 }
 
 function emptyState(state = appState){
-  state.search = '',
     state.availableDrivers = [],
     state.availableLoads = [];
 }
@@ -32,8 +31,7 @@ function queryDriverByState (data, searchTerm){
       addDrivers(appState, data)
     }
     else if(searchTerm == data[i].truckInfo[0].location){
-      console.log(data[i], appState)
-      appState.availableDrivers.push(data[i]);
+         appState.availableDrivers.push(data[i])
     }
 
   }
@@ -45,7 +43,7 @@ function queryLoadByState (data, searchTerm){
       addLoad(appState, data)
     }
     else if(searchTerm == data[i].load.puLocation){
-      appState.availableLoads.push(data[i]);
+      appState.availableLoads.push(data[i])
     }
 
 
@@ -55,6 +53,7 @@ function queryLoadByState (data, searchTerm){
 function queryDataBase(search){
   
   emptyState();
+   
   const queryState = $('#stateSelector').val();
 
   
@@ -62,22 +61,22 @@ function queryDataBase(search){
 
     fetch('/drivers').then(response => {
       return response.json();
-    })
+    });
     .then(data =>{
 
         return queryDriverByState(data, queryState)
-    })
+    });
         .then(function(){
           render(($('div.real-data')));
         });
   }else {
     fetch('/brokershippers').then(response => {
       return response.json();
-    })
+    });
         .then(data =>{
          
           return queryLoadByState(data, queryState)
-        })
+        });
         .then(function(){
           render(($('div.real-data')));
         });
@@ -99,7 +98,7 @@ function postDriver(search){
       trailerType: $('#trailerType').val(),
       location: $('#location').val()
     }
-  };
+  }
 
   fetch(`/drivers`, {
     method: 'post', 
@@ -123,7 +122,7 @@ function postBroker(search){
       pudate: $('#pudate').val(),
       freight: $('#freight').val()
     }
-  };
+  }
 
   fetch(`/brokershippers`, {
     method: 'post', 
@@ -218,5 +217,4 @@ $(function(){
     postBroker();
   });
 
-  $('')
 });
